@@ -70,17 +70,26 @@ body {
 }
 
 .photo-gallery {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  @include divider;
-}
+  
 
-// .hero .main {
-//   &_images photogallery {
-//     width: 100%;
-//   }
-// }
+  &__images {
+    @include tablet {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+  }
+
+  &__photo{
+    width: 100%;
+    @include divider;
+
+    @include tablet {
+      width: 30%;
+    }
+  }
+}
 
 .footer {
   background-color: $bandsite-black;
