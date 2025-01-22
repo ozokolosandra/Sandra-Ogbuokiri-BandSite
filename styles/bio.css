@@ -1,15 +1,15 @@
 @font-face {
-  font-family: "NunitoSans-Bold";
+  font-family: "NunitoSans";
   src: url("/assets/Font/NunitoSans-Bold.woff") format("woff");
   font-weight: 700;
 }
 @font-face {
-  font-family: "NunitoSans-Medium";
+  font-family: "NunitoSans";
   src: url("/assets/Font/NunitoSans-Medium.woff") format("woff");
   font-weight: 500;
 }
 @font-face {
-  font-family: "NunitoSans-Regular";
+  font-family: "NunitoSans";
   src: url("/assets/Font/NunitoSans-Regular.woff") format("woff");
   font-weight: 400;
 }
@@ -52,8 +52,9 @@ body {
 .header__header__nav {
   display: flex;
 }
-.header__nav--links {
+.header__links {
   list-style: none;
+  margin: 0;
   display: flex;
   justify-content: space-between;
 }
