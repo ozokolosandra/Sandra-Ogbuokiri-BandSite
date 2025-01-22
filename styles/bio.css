@@ -79,7 +79,7 @@ body {
   position: relative;
   background-size: cover;
 }
-.heroh2 {
+.hero h2 {
   margin: mobile-padding;
 }
 .hero__section {
@@ -106,4 +106,19 @@ body {
 
 .hero .main_images photogallery {
   width: 100%;
+}
+
+.footer {
+  background-color: #323232;
+  color: #ffffff;
+}
+.footer__desc__img img {
+  background-color: #323232;
+}
+.footer a {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  text-decoration: none;
+  color: #ffffff;
 }/*# sourceMappingURL=bio.css.map */

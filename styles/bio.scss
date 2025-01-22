@@ -35,6 +35,7 @@ body {
   &__title {
     margin: 37px;
     color: #afafaf;
+    padding-left: 12px;
   }
   &__overlay {
     position: absolute;
@@ -52,6 +53,8 @@ body {
     align-items: center;
     position: relative;
     background-size: cover;
+    @include tablet {
+    }
   }
   & h2 {
     margin: mobile-padding;
@@ -71,8 +74,24 @@ body {
   @include divider;
 }
 
-.hero .main {
-  &_images photogallery {
-    width: 100%;
+// .hero .main {
+//   &_images photogallery {
+//     width: 100%;
+//   }
+// }
+
+.footer {
+  background-color: #323232;
+  color: #ffffff;
+  &__desc__img img {
+    background-color: #323232;
   }
+  & a {
+    appearance: none;
+    text-decoration: none;
+    color: #ffffff;
+  }
+}
+.footer__footer {
+  @include mobile;
 }
