@@ -61,6 +61,7 @@ body {
 .hero__title {
   margin: 37px;
   color: #afafaf;
+  padding-left: 12px;
 }
 .hero__overlay {
   position: absolute;
@@ -102,10 +103,6 @@ body {
   align-items: center;
   justify-content: center;
   padding: 16px;
-}
-
-.hero .main_images photogallery {
-  width: 100%;
 }
 
 .footer {
