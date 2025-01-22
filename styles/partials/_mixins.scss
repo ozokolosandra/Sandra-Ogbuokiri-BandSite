@@ -1,0 +1,36 @@
+@use "variables" as *;
+
+@mixin tablet {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+
+@mixin font_bold {
+  font-family: "NunitoSans-Bold";
+  font-weight: 700;
+}
+
+@mixin font_medium {
+  font-family: "NunitoSans-Medium";
+  font-weight: 500;
+}
+@mixin font_regular {
+  font-family: "NunitoSans-Regular";
+  font-weight: 400;
+}
+
+@mixin header_2 {
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 2rem;
+  background-color: white;
+}

@@ -1,1 +1,86 @@
-/*# sourceMappingURL=bio.css.map */
+@font-face {
+  font-family: "NunitoSans-Bold";
+  src: url("/assets/Font/NunitoSans-Bold.woff") format("woff");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "NunitoSans-Medium";
+  src: url("/assets/Font/NunitoSans-Medium.woff") format("woff");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "NunitoSans-Regular";
+  src: url("/assets/Font/NunitoSans-Regular.woff") format("woff");
+  font-weight: 400;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #323232;
+}
+.header__title {
+  font-family: "NunitoSans-Bold";
+  font-weight: 700;
+}
+.header__logo {
+  width: 45%;
+  position: relative;
+  top: 15px;
+  left: 86px;
+  padding: 1.25rem;
+}
+.header__header__nav {
+  display: flex;
+}
+.header__nav--links {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hero__title {
+  margin: 37px;
+  color: #afafaf;
+}
+.hero__overlay {
+  position: absolute;
+  inset: 0.6875rem;
+  background-color: #323232;
+  opacity: 0.5;
+}
+.hero__container {
+  height: 45vw;
+  background-image: url(../assets/Images/hero-bio.jpg);
+  min-height: 300px;
+  height: 45vw;
+  max-height: 700px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-size: cover;
+}
+.heroimg {
+  width: 100%;
+}
+
+.photo-gallery {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.hero .main_images photogallery {
+  width: 100%;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 2rem;
+  background-color: white;
+}/*# sourceMappingURL=bio.css.map */

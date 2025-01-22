@@ -1,1 +1,74 @@
 @use "partials/global" as *;
+@use "partials/mixins" as *;
+@use "partials/typography" as *;
+@use "partials/variables" as *;
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #323232;
+  &__title {
+    @include font_bold;
+  }
+  &__logo {
+    width: 45%;
+    position: relative;
+    top: 15px;
+    left: 86px;
+    padding: 1.25rem;
+  }
+  &__header__nav {
+    display: flex;
+  }
+  &__nav--links {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.hero {
+  &__title {
+    margin: 37px;
+    color: #afafaf;
+  }
+  &__overlay {
+    position: absolute;
+    inset: 0.6875rem;
+    background-color: #323232;
+    opacity: 0.5;
+  }
+  &__container {
+    height: 45vw;
+    background-image: url(../assets/Images/hero-bio.jpg);
+    min-height: 300px;
+    height: 45vw;
+    max-height: 700px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-size: cover;
+  }
+  &img {
+    width: 100%;
+  }
+}
+
+.photo-gallery {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.hero .main {
+  &_images photogallery {
+    width: 100%;
+  }
+}
+
+h2 {
+  @include header_2;
+}
