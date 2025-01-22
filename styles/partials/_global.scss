@@ -1,0 +1,12 @@
+@use "typography";
+@use "mixins" as *;
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "NunitoSans";
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.125rem;
+}

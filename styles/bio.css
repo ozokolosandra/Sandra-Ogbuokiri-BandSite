@@ -13,6 +13,17 @@
   src: url("/assets/Font/NunitoSans-Regular.woff") format("woff");
   font-weight: 400;
 }
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "NunitoSans";
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.125rem;
+}
+
 body {
   margin: 0;
   padding: 0;
