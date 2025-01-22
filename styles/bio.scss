@@ -12,6 +12,7 @@ body {
   background-color: #323232;
   &__title {
     @include font_bold;
+    @include page_header;
   }
   &__logo {
     width: 45%;
@@ -52,7 +53,13 @@ body {
     position: relative;
     background-size: cover;
   }
-  &img {
+  & h2 {
+    margin: mobile-padding;
+  }
+  &__section {
+    @include divider;
+  }
+  & img {
     width: 100%;
   }
 }
@@ -61,14 +68,11 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
+  @include divider;
 }
 
 .hero .main {
   &_images photogallery {
     width: 100%;
   }
-}
-
-h2 {
-  @include header_2;
 }
