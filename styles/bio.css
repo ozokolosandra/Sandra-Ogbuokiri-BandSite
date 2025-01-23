@@ -22,6 +22,8 @@ body {
   margin: 0;
   font-size: 13px;
   line-height: 1.125rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -32,23 +34,45 @@ body {
 .header {
   background-color: #323232;
 }
+@media screen and (min-width: 768px) {
+  .header {
+    display: flex;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .header {
+    display: flex;
+  }
+}
 .header__logo {
   width: 45%;
   position: relative;
-  top: 15px;
+  top: 0.5rem;
   left: 86px;
   padding: 1.25rem;
 }
 .header__nav {
-  font-size: 24px;
-  line-height: 2rem;
-  font-family: "NunitoSans";
-  font-weight: 700;
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: 600;
 }
 @media screen and (min-width: 768px) {
   .header__nav {
-    font-size: 44px;
-    line-height: 68px;
+    font-size: 24px;
+    line-height: 2rem;
+    position: relative;
+    font-weight: 500;
+    color: #ffffff;
+    top: 16px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .header__nav {
+    font-size: 24px;
+    line-height: 2rem;
+    position: relative;
+    font-weight: 500;
+    color: #ffffff;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -61,7 +85,12 @@ body {
   list-style: none;
   margin: 0;
   display: flex;
-  justify-content: space-between;
+  gap: 1rem;
+}
+@media screen and (min-width: 1280px) {
+  .header__links {
+    justify-content: space-evenly;
+  }
 }
 
 .hero__title {
@@ -87,20 +116,26 @@ body {
   position: relative;
   background-size: cover;
 }
-.hero h2 {
-  margin: mobile-padding;
-}
 .hero__section {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 16px;
+  padding: 1rem;
+}
+.hero__section__title {
+  padding: 24px 16px;
+  width: 100%;
+  margin: 0 1.5rem 0 0;
 }
 .hero img {
   width: 100%;
 }
 
+.photo-gallery {
+  background-color: #fafafa;
+  line-height: 2rem;
+}
 @media screen and (min-width: 768px) {
   .photo-gallery__images {
     display: flex;
@@ -114,17 +149,25 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 16px;
+  padding: 1rem;
 }
 @media screen and (min-width: 768px) {
   .photo-gallery__photo {
     width: 30%;
   }
 }
+.photo-gallery__title {
+  padding: 24px 16px;
+  width: 100%;
+  margin: 0 1.5rem 0 0;
+}
 
 .footer {
   background-color: #323232;
   color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding-left: 1.5rem;
 }
 .footer__desc__img img {
   background-color: #323232;
