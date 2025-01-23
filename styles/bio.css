@@ -15,6 +15,8 @@
 }
 * {
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -22,8 +24,6 @@ body {
   margin: 0;
   font-size: 13px;
   line-height: 1.125rem;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -32,6 +32,7 @@ body {
 }
 
 .header {
+  line-height: 24px;
   background-color: #323232;
 }
 @media screen and (min-width: 768px) {
@@ -82,22 +83,35 @@ body {
   }
 }
 .header__links {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.header__links a {
   list-style: none;
   margin: 0;
-  display: flex;
   gap: 1rem;
+  text-decoration: none;
+  color: white;
+  list-style: none;
 }
 @media screen and (min-width: 1280px) {
-  .header__links {
+  .header__links a {
     justify-content: space-evenly;
   }
 }
 
+.hero {
+  line-height: 32px;
+}
 .hero__title {
   margin: 37px;
   color: #ffffff;
   padding-left: 12px;
   z-index: 1;
+  font-size: 24px;
+  font-family: "NunitoSans";
+  font-weight: 700;
 }
 .hero__overlay {
   position: absolute;
@@ -108,8 +122,7 @@ body {
 .hero__container {
   height: 45vw;
   background-image: url(../assets/Images/hero-bio.jpg);
-  min-height: 300px;
-  height: 45vw;
+  min-height: 220px;
   max-height: 700px;
   display: flex;
   align-items: center;
@@ -121,12 +134,15 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 0 0 1rem 0;
 }
 .hero__section__title {
   padding: 24px 16px;
   width: 100%;
   margin: 0 1.5rem 0 0;
+  font-family: "NunitoSans";
+  font-weight: 700;
+  font-size: 24px;
 }
 .hero img {
   width: 100%;
@@ -149,7 +165,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 0 0 1rem 0;
 }
 @media screen and (min-width: 768px) {
   .photo-gallery__photo {
