@@ -168,9 +168,12 @@ body {
   display: flex;
   flex-direction: column;
   padding-left: 1.5rem;
+  font-weight: 400;
 }
 .footer__desc__img img {
   background-color: #323232;
+  display: flex;
+  gap: 3rem;
 }
 .footer a {
   -webkit-appearance: none;

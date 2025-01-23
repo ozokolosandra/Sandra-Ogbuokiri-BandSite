@@ -132,8 +132,11 @@ body {
   display: flex;
   flex-direction: column;
   padding-left: 1.5rem;
+  font-weight: 400;
   &__desc__img img {
     background-color: $bandsite-black;
+    display: flex;
+    gap: 3rem;
   }
   & a {
     appearance: none;
@@ -141,7 +144,3 @@ body {
     color: #ffffff;
   }
 }
-
-// .footer__footer {
-//   @include mobile;
-// }
