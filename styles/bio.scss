@@ -11,8 +11,6 @@ body {
 .header {
   background-color: $bandsite-black;
   &__title {
-    @include font_bold;
-    @include page_header;
   }
   &__logo {
     width: 45%;
@@ -21,9 +19,22 @@ body {
     left: 86px;
     padding: 1.25rem;
   }
-  &__header__nav {
-    display: flex;
+  &__nav {
+    font-size: 24px;
+    line-height: 2rem;
+    @include font_bold;
+
+    @include tablet {
+      font-size: 44px;
+      line-height: 68px;
+    }
   }
+
+  @include desktop {
+    font-size: 44px;
+    line-height: 68px;
+  }
+
   &__links {
     list-style: none;
     margin: 0;
@@ -70,18 +81,15 @@ body {
 }
 
 .photo-gallery {
-  
-
   &__images {
     @include tablet {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
     }
-
   }
 
-  &__photo{
+  &__photo {
     width: 100%;
     @include divider;
 
@@ -103,6 +111,7 @@ body {
     color: #ffffff;
   }
 }
-.footer__footer {
-  @include mobile;
-}
+
+// .footer__footer {
+//   @include mobile;
+// }

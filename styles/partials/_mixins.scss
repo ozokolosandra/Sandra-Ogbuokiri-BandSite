@@ -31,13 +31,9 @@
   font-weight: 400;
 }
 
-@mixin page_header {
-  display: flex;
-  justify-content: center;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 2rem;
-  background-color: white;
+@mixin page_header_tablet_desktop {
+  font-size: 44px;
+  line-height: 68px;
 }
 
 @mixin divider {
