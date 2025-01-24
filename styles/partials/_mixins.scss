@@ -24,15 +24,6 @@
 
 @mixin font_medium {
   font-family: "NunitoSans";
-  font-weight: 500;
-}
-@mixin font_regular {
-  font-family: "NunitoSans";
-  font-weight: 400;
-}
-
-@mixin page_header_tablet_desktop {
-  font-size: 44px;
   line-height: 68px;
 }
 
@@ -41,7 +32,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 0 1rem 0;
+  padding: 0 1rem 1rem 1rem;
 }
 
 @mixin mobile_footer {
@@ -49,10 +40,16 @@
 }
 
 @mixin page_padding {
-  padding: 24px 16px;
+  padding: 0 1rem 1rem 1rem;
   width: 100%;
   margin: 0 1.5rem 0 0;
 }
 @mixin divider_line {
   line-height: 2rem;
+}
+
+@mixin p_line_height {
+  line-height: 18px;
+  font-size: 13;
+  font-weight: 400;
 }
