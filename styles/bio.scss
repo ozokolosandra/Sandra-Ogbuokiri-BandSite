@@ -44,7 +44,7 @@ body {
     font-size: 14px;
     color: $white;
     font-weight: 600;
-  
+
     @include tablet {
       font-size: 24px;
       line-height: 2rem;
@@ -60,7 +60,6 @@ body {
       color: $white;
     }
   }
-
 
   &__links {
     display: flex;
@@ -96,7 +95,6 @@ body {
     }
   }
 }
-
 
 .hero {
   &__title {
@@ -213,8 +211,15 @@ body {
     color: #ffffff;
   }
   &__desc {
-    padding-bottom: 2rem;
+    @include tablet {
+      padding-right: 12px;
+      display: flex;
+      gap: 2rem;
+      width: 100%;
+      padding-bottom: 2rem;
+    }
   }
+
   &__title {
     @include footer-title;
   }

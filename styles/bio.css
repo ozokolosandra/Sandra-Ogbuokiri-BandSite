@@ -246,8 +246,14 @@ body {
   text-decoration: none;
   color: #ffffff;
 }
-.footer__desc {
-  padding-bottom: 2rem;
+@media screen and (min-width: 768px) {
+  .footer__desc {
+    padding-right: 12px;
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    padding-bottom: 2rem;
+  }
 }
 .footer__title {
   font-size: 24px;
