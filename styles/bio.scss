@@ -17,11 +17,27 @@ body {
   padding-top: 1rem;
 
   @include tablet {
+    padding: 0;
   }
 
   @include desktop {
     font-size: 44px;
     line-height: 68px;
+  }
+
+  &__logo {
+    @include tablet {
+      display: flex;
+      align-items: center;
+      padding-left: 1rem;
+      height: 6.25rem;
+    }
+  }
+
+  &__logo-link {
+    @include tablet {
+      display: flex;
+    }
   }
 
   &__nav {
@@ -34,6 +50,7 @@ body {
       line-height: 2rem;
       font-weight: 500;
       color: $white;
+      margin-left: 4rem;
     }
     @include desktop {
       font-size: 24px;
@@ -43,6 +60,7 @@ body {
       color: $white;
     }
   }
+
 
   &__links {
     display: flex;
@@ -62,25 +80,22 @@ body {
     transition: color 0.3s ease, transform 0.3s ease, border 0.3s ease;
     flex-grow: 1;
 
+    &:hover {
+      border-bottom: 4px solid $white;
+    }
+
+    &--inactive {
+      opacity: 0.5;
+      &:hover {
+        opacity: 1;
+      }
+    }
+
     @include desktop {
       justify-content: space-evenly;
     }
   }
-
-  &__links a:hover {
-    border-bottom: 4px solid $white;
-  }
-
-  &__links--inactive {
-    opacity: 0.5;
-  }
-
-  &__links--inactive:hover {
-    opacity: 1;
-  }
 }
-
-
 
 
 .hero {
