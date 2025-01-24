@@ -196,11 +196,17 @@ body {
   flex-direction: column;
   padding-left: 1.5rem;
   font-weight: 400;
+  line-height: 1.125rem;
+}
+.footer__footer {
+  display: flex;
+  flex-direction: column;
 }
 .footer__desc__img img {
   background-color: #323232;
   display: flex;
   gap: 3rem;
+  height: 20px;
 }
 .footer a {
   -webkit-appearance: none;
@@ -208,4 +214,15 @@ body {
           appearance: none;
   text-decoration: none;
   color: #ffffff;
+}
+.footer__desc {
+  padding-bottom: 2rem;
+}
+.footer__title {
+  font-size: 24px;
+  font-weight: 400px;
+}
+.footer__socials {
+  display: flex;
+  gap: 2rem;
 }/*# sourceMappingURL=bio.css.map */
