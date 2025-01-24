@@ -12,11 +12,6 @@
   }
 }
 
-@mixin mobile {
-  @media screen and (min-width: $mobile-breakpoint) {
-    @content;
-  }
-}
 @mixin font_bold {
   font-family: "NunitoSans";
   font-weight: 700;
@@ -59,8 +54,3 @@
   font-weight: 400px;
 }
 
-@mixin flex-column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}

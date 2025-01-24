@@ -11,31 +11,29 @@ body {
 .header {
   line-height: 24px;
   background-color: $bandsite-black;
-  @include flex-column;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 1rem;
+
   @include tablet {
-    display: flex;
-  }
-  @include desktop {
-    display: flex;
   }
 
-  &__logo {
-    width: 45%;
-    position: relative;
-    top: 0.5rem;
+  @include desktop {
+    font-size: 44px;
+    line-height: 68px;
   }
+
   &__nav {
     font-size: 14px;
     color: $white;
     font-weight: 600;
-
+  
     @include tablet {
       font-size: 24px;
       line-height: 2rem;
-      position: relative;
       font-weight: 500;
       color: $white;
-      top: 16px;
     }
     @include desktop {
       font-size: 24px;
@@ -46,17 +44,13 @@ body {
     }
   }
 
-  @include desktop {
-    font-size: 44px;
-    line-height: 68px;
-  }
   &__links {
     display: flex;
     flex-direction: row;
     gap: 2rem;
   }
 
-  &__links a {
+  &__link {
     list-style: none;
     margin: 0;
     gap: 1rem;
@@ -66,14 +60,15 @@ body {
     padding: 0.5rem 1rem;
     border-radius: 5px;
     transition: color 0.3s ease, transform 0.3s ease, border 0.3s ease;
+    flex-grow: 1;
 
     @include desktop {
       justify-content: space-evenly;
     }
   }
+
   &__links a:hover {
     border-bottom: 4px solid $white;
-    transform: scale(1.1);
   }
 
   &__links--inactive {
@@ -84,6 +79,10 @@ body {
     opacity: 1;
   }
 }
+
+
+
+
 .hero {
   &__title {
     margin: 37px;
