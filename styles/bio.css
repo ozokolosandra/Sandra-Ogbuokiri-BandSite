@@ -34,6 +34,9 @@ body {
 .header {
   line-height: 24px;
   background-color: #323232;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 @media screen and (min-width: 768px) {
   .header {
@@ -49,8 +52,6 @@ body {
   width: 45%;
   position: relative;
   top: 0.5rem;
-  left: 86px;
-  padding: 1.25rem;
 }
 .header__nav {
   font-size: 14px;
@@ -84,7 +85,7 @@ body {
 }
 .header__links {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
   gap: 2rem;
 }
 .header__links a {
@@ -94,11 +95,24 @@ body {
   text-decoration: none;
   color: white;
   list-style: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: color 0.3s ease, transform 0.3s ease, border 0.3s ease;
 }
 @media screen and (min-width: 1280px) {
   .header__links a {
     justify-content: space-evenly;
   }
+}
+.header__links a:hover {
+  border-bottom: 4px solid #ffffff;
+  transform: scale(1.1);
+}
+.header__links--inactive {
+  opacity: 0.5;
+}
+.header__links--inactive:hover {
+  opacity: 1;
 }
 
 .hero {

@@ -11,6 +11,7 @@ body {
 .header {
   line-height: 24px;
   background-color: $bandsite-black;
+  @include flex-column;
   @include tablet {
     display: flex;
   }
@@ -22,8 +23,6 @@ body {
     width: 45%;
     position: relative;
     top: 0.5rem;
-    left: 86px;
-    padding: 1.25rem;
   }
   &__nav {
     font-size: 14px;
@@ -53,7 +52,7 @@ body {
   }
   &__links {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
     gap: 2rem;
   }
 
@@ -64,13 +63,27 @@ body {
     text-decoration: none;
     color: white;
     list-style: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: color 0.3s ease, transform 0.3s ease, border 0.3s ease;
 
     @include desktop {
       justify-content: space-evenly;
     }
   }
-}
+  &__links a:hover {
+    border-bottom: 4px solid $white;
+    transform: scale(1.1);
+  }
 
+  &__links--inactive {
+    opacity: 0.5;
+  }
+
+  &__links--inactive:hover {
+    opacity: 1;
+  }
+}
 .hero {
   &__title {
     margin: 37px;
