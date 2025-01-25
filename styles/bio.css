@@ -121,6 +121,11 @@ body {
 .hero {
   line-height: 32px;
 }
+@media screen and (min-width: 768px) {
+  .hero {
+    line-height: 2.75rem;
+  }
+}
 .hero__title {
   margin: 37px;
   color: #ffffff;
@@ -186,6 +191,14 @@ body {
   line-height: 2rem;
 }
 @media screen and (min-width: 768px) {
+  .photo-gallery {
+    line-height: 2.75rem;
+    font-size: 1.5rem;
+    font-family: "NunitoSans";
+    font-weight: 700;
+  }
+}
+@media screen and (min-width: 768px) {
   .photo-gallery__images {
     display: flex;
     flex-wrap: wrap;
@@ -211,11 +224,8 @@ body {
   width: 100%;
   margin: 0 1.5rem 0 0;
   padding-bottom: 0;
-}
-.photo-gallery__title h3 {
   padding-top: 16px;
 }
-
 .footer {
   background-color: #323232;
   color: #ffffff;
@@ -229,11 +239,26 @@ body {
   display: flex;
   flex-direction: column;
 }
+@media screen and (min-width: 768px) {
+  .footer__footer {
+    gap: 4rem;
+    align-items: center;
+    flex-direction: row;
+  }
+}
 .footer__desc__img img {
   background-color: #323232;
   display: flex;
   gap: 3rem;
   height: 20px;
+}
+@media screen and (min-width: 768px) {
+  .footer__desc__img img {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    align-items: flex-end;
+  }
 }
 .footer__desc--group h3 {
   font-weight: 600;
