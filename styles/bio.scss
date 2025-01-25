@@ -129,6 +129,9 @@ body {
   &__section {
     @include divider;
     padding: 0 1rem 0rem 1rem;
+    @include tablet {
+      padding-left: 4.5rem;
+    }
   }
   &__subtitle {
     padding: 1.5rem 2.5rem 1rem 0;
@@ -140,6 +143,9 @@ body {
 
   & img {
     width: 100%;
+    @include tablet {
+      width: 100%;
+    }
   }
   &__section__about--desc {
     padding: 1rem;
@@ -156,20 +162,23 @@ body {
 .bees {
   font-size: 18px;
   @include tablet {
-    margin: 0px 32px;
-    padding: 0px 24px;
+    margin: 02.25rem;
+    padding: 0px 2rem;
   }
   &__paragraph {
     @include tablet {
       display: flex;
+      width: 74%;
+      margin: 0;
+      padding: 0;
     }
   }
   &__paragraph__about {
     @include tablet {
       padding: 1px 55px;
       padding: 0px 1.25rem;
-      margin-left: 4rem;
-      padding-right: 4rem;
+      margin-left: 3rem;
+      padding-right: 2rem;
     }
   }
 }
