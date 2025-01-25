@@ -155,6 +155,23 @@ body {
 
 .bees {
   font-size: 18px;
+  @include tablet {
+    margin: 0px 32px;
+    padding: 0px 24px;
+  }
+  &__paragraph {
+    @include tablet {
+      display: flex;
+    }
+  }
+  &__paragraph__about {
+    @include tablet {
+      padding: 1px 55px;
+      padding: 0px 1.25rem;
+      margin-left: 4rem;
+      padding-right: 4rem;
+    }
+  }
 }
 
 .photo-gallery {
@@ -188,8 +205,6 @@ body {
     @include page_padding;
     padding-bottom: 0;
     padding-top: 16px;
-  }
-  &__title h3 {
   }
 }
 

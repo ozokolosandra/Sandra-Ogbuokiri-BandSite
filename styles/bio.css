@@ -185,6 +185,25 @@ body {
 .bees {
   font-size: 18px;
 }
+@media screen and (min-width: 768px) {
+  .bees {
+    margin: 0px 32px;
+    padding: 0px 24px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .bees__paragraph {
+    display: flex;
+  }
+}
+@media screen and (min-width: 768px) {
+  .bees__paragraph__about {
+    padding: 1px 55px;
+    padding: 0px 1.25rem;
+    margin-left: 4rem;
+    padding-right: 4rem;
+  }
+}
 
 .photo-gallery {
   background-color: #fafafa;
@@ -226,6 +245,7 @@ body {
   padding-bottom: 0;
   padding-top: 16px;
 }
+
 .footer {
   background-color: #323232;
   color: #ffffff;
