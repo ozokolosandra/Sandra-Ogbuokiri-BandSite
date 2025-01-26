@@ -1,4 +1,4 @@
 # ignore all scss map
-*.css.map;
+*.css.map
 *.vscode
 *.DS_Store
