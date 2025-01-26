@@ -20,7 +20,9 @@
     font-size: 2.75rem;
     line-height: 4.25rem;
   }
-
+  &__links {
+    display: flex;
+  }
   &__logo {
     @include tablet {
       display: flex;
@@ -54,14 +56,6 @@
       color: $white;
       margin-left: 4rem;
     }
-
-    // @include desktop {
-    //   font-size: 24px;
-    //   line-height: 2rem;
-    //   position: relative;
-    //   font-weight: 500;
-    //   color: $white;
-    // }
   }
 
   &__link {
@@ -99,6 +93,8 @@
     }
   }
 }
+
+// Hero Section
 
 .hero {
   &__title {
@@ -301,7 +297,7 @@
       flex-direction: row;
     }
     @include desktop {
-      gap: 12rem;
+      gap: 14rem;
     }
   }
 

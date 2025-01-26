@@ -44,6 +44,9 @@ body {
     line-height: 4.25rem;
   }
 }
+.header__links {
+  display: flex;
+}
 @media screen and (min-width: 768px) {
   .header__logo {
     display: flex;
@@ -347,7 +350,7 @@ body {
 }
 @media screen and (min-width: 1280px) {
   .footer__footer {
-    gap: 12rem;
+    gap: 14rem;
   }
 }
 .footer__desc__logo {
