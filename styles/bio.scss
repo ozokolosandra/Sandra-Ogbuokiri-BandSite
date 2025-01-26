@@ -3,11 +3,7 @@
 @use "partials/typography" as *;
 @use "partials/variables" as *;
 
-body {
-  margin: 0;
-  padding: 0;
-}
-
+//header styling
 .header {
   line-height: 24px;
   background-color: $bandsite-black;
@@ -21,8 +17,8 @@ body {
   }
 
   @include desktop {
-    font-size: 44px;
-    line-height: 68px;
+    font-size: 2.75rem;
+    line-height: 4.25rem;
   }
 
   &__logo {
@@ -30,6 +26,12 @@ body {
       display: flex;
       align-items: center;
       padding-left: 1rem;
+      height: 6.25rem;
+    }
+    @include desktop {
+      display: flex;
+      align-items: center;
+      padding-left: 6rem;
       height: 6.25rem;
     }
   }
@@ -52,19 +54,14 @@ body {
       color: $white;
       margin-left: 4rem;
     }
-    @include desktop {
-      font-size: 24px;
-      line-height: 2rem;
-      position: relative;
-      font-weight: 500;
-      color: $white;
-    }
-  }
 
-  &__links {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
+    // @include desktop {
+    //   font-size: 24px;
+    //   line-height: 2rem;
+    //   position: relative;
+    //   font-weight: 500;
+    //   color: $white;
+    // }
   }
 
   &__link {
@@ -78,6 +75,13 @@ body {
     border-radius: 5px;
     transition: color 0.3s ease, transform 0.3s ease, border 0.3s ease;
     flex-grow: 1;
+    @include tablet {
+      font-size: 1.25rem;
+      font-weight: 500;
+    }
+    @include desktop {
+      @include tablet;
+    }
 
     &:hover {
       border-bottom: 4px solid $white;
@@ -97,9 +101,6 @@ body {
 }
 
 .hero {
-  // @include tablet {
-  //   line-height: 2.75rem;
-  // }
   &__title {
     margin: 37px;
     color: $white;
@@ -197,9 +198,10 @@ body {
   }
   &__quote {
     @include tablet {
-      font-size: 0.875rem;
-      line-height: 22px;
-      margin-bottom: 0;
+      @include quote_style;
+    }
+    @include tablet {
+      @include quote_style;
     }
   }
   &__img {
@@ -241,6 +243,12 @@ body {
 .photo-gallery {
   background-color: $alabaster;
   @include divider_line;
+  transition: filter 0.2s ease;
+  filter: grayscale(100%);
+
+  &:hover {
+    filter: grayscale(0);
+  }
 
   @include tablet {
     line-height: 2.75rem;
@@ -298,9 +306,11 @@ body {
   }
 
   &__desc__logo {
+    width: 7.5rem;
+
     @include tablet {
       position: absolute;
-      right: 0.0625rem;
+      right: 3.0625rem;
       padding: 1.5rem;
     }
     @include desktop {
@@ -309,18 +319,7 @@ body {
       padding: 1.5rem;
     }
   }
-  // &__desc__img img {
-  //   background-color: $bandsite-black;
-  //   display: flex;
-  //   gap: 3rem;
-  //   height: 20px;
-  //   @include tablet {
-  //     display: flex;
-  //     flex-direction: column;
-  //     width: 45%;
-  //     align-items: flex-end;
-  //   }
-  // }
+
   &__desc--group h3 {
     font-weight: 600;
     font-size: 14px;
@@ -335,6 +334,7 @@ body {
     color: #ffffff;
   }
   &__desc {
+    padding-bottom: 1rem;
     @include tablet {
       padding-right: 12px;
       display: flex;
@@ -355,4 +355,7 @@ body {
     display: flex;
     gap: 2rem;
   }
+}
+
+.photo-gallery {
 }
