@@ -118,9 +118,6 @@ body {
   }
 }
 
-.hero {
-  line-height: 32px;
-}
 @media screen and (min-width: 768px) {
   .hero {
     line-height: 2.75rem;
@@ -188,24 +185,43 @@ body {
   }
 }
 .hero__section__about--desc {
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding-left: 12px;
   line-height: 18px;
 }
+@media screen and (min-width: 768px) {
+  .hero__section__about--desc {
+    padding: 1rem;
+    line-height: 32px;
+  }
+}
 
-.band_desc {
+.band__desc {
   line-height: 18px;
   font-size: 13;
   font-weight: 400;
   font-weight: 600;
 }
 @media screen and (min-width: 768px) {
-  .band_desc {
+  .band__desc {
     margin-bottom: 0;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 2rem;
   }
 }
-
-.band_img {
-  height: 18.75rem;
+@media screen and (min-width: 768px) {
+  .band__desc__quote {
+    font-size: 0.875rem;
+    line-height: 22px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .band__desc__img {
+    height: 18.75rem;
+  }
 }
 
 .bees {
@@ -223,7 +239,7 @@ body {
 @media screen and (min-width: 768px) {
   .bees__paragraph {
     display: flex;
-    width: 74%;
+    width: 90%;
     margin: 0;
     padding: 0;
     line-height: 1.375rem;
