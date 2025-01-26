@@ -16,10 +16,13 @@
   font-family: "NunitoSans";
   font-weight: 700;
 }
-
 @mixin font_medium {
+  font-family: "Nunitosans";
+  font-weight: 500;
+}
+@mixin font_regular {
   font-family: "NunitoSans";
-  line-height: 68px;
+  font-weight: 400;
 }
 
 @mixin divider {
@@ -53,4 +56,7 @@
   font-size: 24px;
   font-weight: 400px;
 }
-
+@mixin footer_text_style {
+  font-size: 24px;
+  line-height: 32px;
+}
