@@ -279,18 +279,11 @@ body {
     flex-direction: row;
   }
 }
-.footer__desc__img img {
-  background-color: #323232;
-  display: flex;
-  gap: 3rem;
-  height: 20px;
-}
 @media screen and (min-width: 768px) {
-  .footer__desc__img img {
-    display: flex;
-    flex-direction: column;
-    width: 45%;
-    align-items: flex-end;
+  .footer__desc__logo {
+    position: absolute;
+    right: 0.0625rem;
+    padding: 1.5rem;
   }
 }
 .footer__desc--group h3 {
