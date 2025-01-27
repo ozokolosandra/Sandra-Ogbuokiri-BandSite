@@ -38,7 +38,7 @@ body {
     padding: 0;
   }
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1024px) {
   .header {
     font-size: 2.75rem;
     line-height: 4.25rem;
@@ -55,7 +55,7 @@ body {
     height: 6.25rem;
   }
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1024px) {
   .header__logo {
     display: flex;
     align-items: center;
@@ -109,7 +109,7 @@ body {
 .header__link--inactive:hover {
   opacity: 1;
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1024px) {
   .header__link {
     justify-content: space-evenly;
   }
@@ -332,9 +332,10 @@ body {
   line-height: 1.375rem;
   font-size: 14px;
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1024px) {
   .footer {
-    padding-right: 4rem;
+    padding-left: 4rem;
+    width: 100%;
   }
 }
 .footer__footer {
@@ -348,9 +349,9 @@ body {
     flex-direction: row;
   }
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1024px) {
   .footer__footer {
-    gap: 14rem;
+    gap: 2rem;
   }
 }
 .footer__desc__logo {
@@ -363,7 +364,7 @@ body {
     padding: 1.5rem;
   }
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1024px) {
   .footer__desc__logo {
     position: absolute;
     right: 5.0625rem;
@@ -372,13 +373,12 @@ body {
 }
 .footer__desc--group h3 {
   font-weight: 600;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 0.8125rem;
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1024px) {
   .footer__desc--group h3 {
-    font-size: 24px;
-    line-height: 32px;
+    line-height: 22px;
   }
 }
 .footer a {
@@ -387,6 +387,10 @@ body {
           appearance: none;
   text-decoration: none;
   color: #ffffff;
+}
+.footer__contacts {
+  flex-wrap: wrap;
+  display: flex;
 }
 .footer__desc {
   padding-bottom: 1rem;
@@ -400,10 +404,13 @@ body {
     padding-bottom: 2rem;
   }
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1024px) {
   .footer__desc {
-    font-size: 24px;
-    line-height: 32px;
+    line-height: 22px;
+    font-size: 14px;
+    width: 72%;
+    font-size: 18px;
+    line-height: 22px;
     font-family: "NunitoSans";
     font-weight: 400;
   }
