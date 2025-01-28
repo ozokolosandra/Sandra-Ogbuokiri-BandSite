@@ -1,0 +1,151 @@
+@use "partials/global" as *;
+@use "partials/mixins" as *;
+@use "partials/typography" as *;
+@use "partials/variables" as *;
+
+//header styling
+.header {
+  line-height: 24px;
+  background-color: $bandsite-black;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 1rem;
+
+  @include tablet {
+    padding: 0;
+  }
+
+  @include desktop {
+    font-size: 2.75rem;
+    line-height: 4.25rem;
+  }
+
+  &__links {
+    display: flex;
+  }
+
+  &__logo {
+    @include tablet {
+      display: flex;
+      align-items: center;
+      padding-left: 1rem;
+      height: 6.25rem;
+    }
+
+    @include desktop {
+      display: flex;
+      align-items: center;
+      padding-left: 6rem;
+      height: 6.25rem;
+    }
+  }
+
+  &__logo-link {
+    @include tablet {
+      display: flex;
+    }
+  }
+
+  &__nav {
+    font-size: 14px;
+    color: $white;
+    font-weight: 600;
+
+    @include tablet {
+      font-size: 24px;
+      line-height: 2rem;
+      font-weight: 500;
+      color: $white;
+      margin-left: 4rem;
+    }
+  }
+
+  &__link {
+    list-style: none;
+    margin: 0;
+    gap: 1rem;
+    text-decoration: none;
+    color: white;
+    list-style: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: color 0.3s ease, transform 0.3s ease, border 0.3s ease;
+    flex-grow: 1;
+
+    @include tablet {
+      font-size: 1.25rem;
+      font-weight: 500;
+    }
+
+    @include desktop {
+      @include tablet;
+    }
+
+    &:hover {
+      border-bottom: 4px solid $white;
+    }
+
+    &--inactive {
+      opacity: 0.5;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    @include desktop {
+      justify-content: space-evenly;
+    }
+  }
+}
+
+// Hero Section
+
+.hero {
+  &__title {
+    margin: 37px;
+    color: $white;
+    padding-left: 12px;
+    z-index: 1;
+    font-size: 24px;
+    line-height: 2rem;
+    @include font_bold;
+
+    @include tablet {
+      font-size: 60px;
+      line-height: 4.25rem;
+    }
+  }
+
+  &__container {
+    height: 45vw;
+    background-image: url(../assets/Images/band.jpg);
+    min-height: 220px;
+    max-height: 700px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-size: cover;
+
+    @include tablet {}
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background-color: $bandsite-black;
+    opacity: 0.5;
+  }
+
+  &__section {
+    @include divider;
+    padding: 0 1rem 0rem 1rem;
+
+    @include tablet {
+      padding-left: 4.5rem;
+      width: 90%;
+    }
+
+  }
+}
