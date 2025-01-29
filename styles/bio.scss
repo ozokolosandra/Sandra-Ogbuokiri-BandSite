@@ -20,9 +20,11 @@
     font-size: 2.75rem;
     line-height: 4.25rem;
   }
+
   &__links {
     display: flex;
   }
+
   &__logo {
     @include tablet {
       display: flex;
@@ -30,6 +32,7 @@
       padding-left: 1rem;
       height: 6.25rem;
     }
+
     @include desktop {
       display: flex;
       align-items: center;
@@ -67,12 +70,13 @@
     list-style: none;
     padding: 0.5rem 1rem;
     border-radius: 5px;
-    transition: color 0.3s ease, transform 0.3s ease, border 0.3s ease;
-    flex-grow: 1;
+
+
     @include tablet {
       font-size: 1.25rem;
       font-weight: 500;
     }
+
     @include desktop {
       @include tablet;
     }
@@ -83,6 +87,7 @@
 
     &--inactive {
       opacity: 0.5;
+
       &:hover {
         opacity: 1;
       }
@@ -105,6 +110,7 @@
     font-size: 24px;
     line-height: 2rem;
     @include font_bold;
+
     @include tablet {
       font-size: 60px;
       line-height: 4.25rem;
@@ -120,8 +126,8 @@
     align-items: center;
     position: relative;
     background-size: cover;
-    @include tablet {
-    }
+
+    @include tablet {}
   }
 
   &__overlay {
@@ -134,17 +140,20 @@
   &__section {
     @include divider;
     padding: 0 1rem 0rem 1rem;
+
     @include tablet {
       padding-left: 4.5rem;
       width: 90%;
     }
   }
+
   &__subtitle {
     padding: 1.5rem 2.5rem 1rem 0;
     line-height: 2rem;
     margin: 0;
     @include font-bold;
     font-size: 24px;
+
     @include tablet {
       width: 100%;
       margin-right: 74px;
@@ -152,8 +161,10 @@
       line-height: 2.75rem;
     }
   }
+
   &__image {
     padding-bottom: 1rem;
+
     @include tablet {
       padding-bottom: 0;
     }
@@ -161,14 +172,17 @@
 
   & img {
     width: 100%;
+
     @include tablet {
       width: 100%;
     }
   }
+
   &__section__about {
     padding: 0 1rem;
     line-height: 1.125rem;
   }
+
   &__section__about--desc {
     display: flex;
     flex-direction: column;
@@ -186,20 +200,24 @@
 .band__desc {
   @include p_line_height;
   font-weight: 600;
+
   @include tablet {
     margin-bottom: 0;
     font-size: 24px;
     font-weight: 500;
     line-height: 2rem;
   }
+
   &__quote {
     @include tablet {
       @include quote_style;
     }
+
     @include tablet {
       @include quote_style;
     }
   }
+
   &__img {
     @include tablet {
       height: 18.75rem;
@@ -209,6 +227,7 @@
 
 .bees {
   font-size: 18px;
+
   @include tablet {
     margin: 02.25rem;
     margin-bottom: 0px;
@@ -216,6 +235,7 @@
     padding-top: 2.25rem;
     margin-top: 0;
   }
+
   &__paragraph {
     @include tablet {
       display: flex;
@@ -225,6 +245,7 @@
       line-height: 1.375rem;
     }
   }
+
   &__paragraph__about {
     @include tablet {
       padding: 1px 55px;
@@ -240,11 +261,6 @@
   background-color: $alabaster;
   @include divider_line;
   transition: filter 0.2s ease;
-  filter: grayscale(100%);
-
-  &:hover {
-    filter: grayscale(0);
-  }
 
   @include tablet {
     line-height: 2.75rem;
@@ -263,12 +279,19 @@
   &__photo {
     width: 100%;
     padding: 0 1rem 1rem;
+    filter: grayscale(100%);
+
+    &:hover {
+      filter: grayscale(0);
+    }
+
     @include divider;
 
     @include tablet {
       width: 30%;
     }
   }
+
   &__title {
     @include page_padding;
     padding-bottom: 0;
@@ -285,18 +308,22 @@
   font-weight: 400;
   line-height: 1.375rem;
   font-size: 14px;
+
   @include desktop {
     padding-left: 4rem;
     width: 100%;
   }
+
   &__footer {
     display: flex;
     flex-direction: column;
+
     @include tablet {
       gap: 4rem;
       align-items: center;
       flex-direction: row;
     }
+
     @include desktop {
       gap: 2rem;
     }
@@ -310,6 +337,7 @@
       right: 3.0625rem;
       padding: 1.5rem;
     }
+
     @include desktop {
       position: absolute;
       right: 5.0625rem;
@@ -321,22 +349,27 @@
     font-weight: 600;
     font-size: 18px;
     line-height: 0.8125rem;
+
     @include desktop {
       line-height: 22px;
       // @include footer_text_style;
     }
   }
+
   & a {
     appearance: none;
     text-decoration: none;
     color: #ffffff;
   }
+
   &__contacts {
     flex-wrap: wrap;
     display: flex;
   }
+
   &__desc {
     padding-bottom: 1rem;
+
     @include tablet {
       padding-right: 12px;
       display: flex;
@@ -344,6 +377,7 @@
       width: 100%;
       padding-bottom: 2rem;
     }
+
     @include desktop {
       line-height: 22px;
       font-size: 14px;
@@ -355,7 +389,20 @@
 
   &__title {
     @include footer-title;
+
+    @include tablet {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    @include desktop {
+      display: flex;
+      align-items: center;
+      gap: 6rem;
+    }
   }
+
   &__socials {
     display: flex;
     gap: 2rem;

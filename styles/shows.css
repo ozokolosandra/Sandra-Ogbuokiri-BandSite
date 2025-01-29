@@ -133,7 +133,7 @@ body {
 }
 .hero__container {
   height: 45vw;
-  background-image: url(../assets/Images/band.jpg);
+  background-image: url(../assets/Images/hero-shows.jpg);
   min-height: 220px;
   max-height: 700px;
   display: flex;
