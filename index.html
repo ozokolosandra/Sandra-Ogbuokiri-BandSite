@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./styles/bio.css" />
+    <script src="./scripts/index-page.js" defer></script>
   </head>
 
   <body>
@@ -122,6 +123,26 @@
           class="photo-gallery__photo"
         />
       </div>
+    </section>
+
+    <section id="comments">
+      <h2>Join the Conversation</h2>
+
+      <form action="">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required />
+
+        <label for="comment__text">Comment</label>
+        <textarea
+          id="comment__text"
+          placeholder="Add a new comment"
+          required
+        ></textarea>
+
+        <button type="submit">Comment</button>
+      </form>
+
+      <div id="comment-list"></div>
     </section>
 
     <section class="footer">
