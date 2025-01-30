@@ -24,15 +24,15 @@ function displaySingleComment(comment) {
     const commentEl = document.createElement('div');
     commentEl.classList.add("comment");
 
-    const nameOfCommenter = document.createElement('p');
+    const nameOfCommenter = document.createElement('div');
     nameOfCommenter.classList.add('name');
     nameOfCommenter.textContent = comment.name;
 
-    const timestampEl = document.createElement("p");
+    const timestampEl = document.createElement("div");
     timestampEl.classList.add("comment__timestamp");
     timestampEl.textContent = new Date(comment.timestamp).toLocaleString();
 
-    const textEl = document.createElement("p");
+    const textEl = document.createElement("div");
     textEl.classList.add("comment__text");
     textEl.textContent = comment.text;
 
@@ -43,12 +43,12 @@ function displaySingleComment(comment) {
     commentList.appendChild(commentEl);
 }
 
-// Function to display all comments
+
 function displayAllComments() {
     const commentList = document.getElementById('comment-list');
-    commentList.innerHTML = ''; // Clear the existing list
+    commentList.innerHTML = ''; 
 
-    comments.forEach(displaySingleComment); // Render each comment
+    comments.forEach(displaySingleComment); 
 }
 
 

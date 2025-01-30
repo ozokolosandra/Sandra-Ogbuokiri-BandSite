@@ -440,14 +440,14 @@
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #fff;
+  border: 2px solid $silver;
 
 }
 
 input[type="text"] {
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid $silver;
   flex-grow: 1;
   width: 200px;
   text-align: center;
@@ -470,7 +470,7 @@ textarea {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid $alabaster;
+  border: 1px solid $silver;
 }
 
 button {
@@ -482,29 +482,13 @@ button {
   cursor: pointer;
 }
 
-
-// .comment img {
-//   width: 40px;
-//   height: 40px;
-//   border-radius: 50%;
-//   background-color: #ccc;
-//   /* Grey background for the circle */
-//   object-fit: cover;
-//   /* Ensures the image fits inside the circle */
-//   margin-right: 10px;
-
-//   /* Grey border around the image */
-//   border: 4px solid #ccc;
-//   /* You can change the thickness of the border */
-// }
-
 .comment__text {
   flex-grow: 1;
 }
 
 .comment__timestamp {
   font-size: 12px;
-  color: $alabaster;
+  color: $silver;
 }
 
 .comment {
@@ -514,13 +498,6 @@ button {
   background-color: $alabaster;
   padding: 10px;
   border-radius: 5px;
+  flex-direction: column;
+  margin-top: 29px
 }
-
-// .comment img {
-//   width: 40px;
-//   height: 40px;
-//   border-radius: 50%;
-//   background-color: #ccc;
-//   object-fit: cover;
-//   margin-right: 10px;
-// }
