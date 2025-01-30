@@ -1,28 +1,44 @@
-
 const comments = [
     { 
         name: "Victor Pinto", 
+        avatar: '', 
         timestamp: new Date(),
         text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains." 
     },
     {  
-         name: "Christina Cabrera", 
+        name: "Christina Cabrera", 
+        avatar: '', 
         timestamp: new Date(), 
         text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day." 
     },
     { 
         name: "Isaac Tadesse",
+        avatar: '', 
         timestamp: new Date(), 
         text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough." 
     }
 ];
-
 
 function displaySingleComment(comment) {
     const commentList = document.getElementById('comment-list');
 
     const commentEl = document.createElement('div');
     commentEl.classList.add("comment");
+
+    const avatarContainer = document.createElement('div');
+    avatarContainer.classList.add('avatar-container');
+
+    const avatarImg = document.createElement('img');
+    avatarImg.classList.add('avatar-img');
+
+    if (comment.avatar) {
+        avatarImg.src = comment.avatar;
+    } else {
+        avatarImg.style.display = 'none'; 
+        avatarContainer.style.backgroundColor = '#E5E5E5'; 
+    }
+
+    avatarContainer.appendChild(avatarImg);
 
     const nameOfCommenter = document.createElement('div');
     nameOfCommenter.classList.add('name');
@@ -36,13 +52,13 @@ function displaySingleComment(comment) {
     textEl.classList.add("comment__text");
     textEl.textContent = comment.text;
 
+    commentEl.appendChild(avatarContainer);
     commentEl.appendChild(nameOfCommenter);
     commentEl.appendChild(timestampEl);
     commentEl.appendChild(textEl);
 
     commentList.appendChild(commentEl);
 }
-
 
 function displayAllComments() {
     const commentList = document.getElementById('comment-list');
@@ -51,28 +67,24 @@ function displayAllComments() {
     comments.forEach(displaySingleComment); 
 }
 
-
 document.querySelector('form').addEventListener('submit', function(event) {
     event.preventDefault();  
 
     const name = document.getElementById('name').value;
     const commentText = document.getElementById('comment__text').value;
 
-    
     const newComment = {
         name: name,
+        avatar: '', 
         timestamp: new Date(),
         text: commentText
     };
 
-    comments.unshift(newComment);
-
-    
+    comments.unshift(newComment); 
     document.getElementById('name').value = '';
     document.getElementById('comment__text').value = '';
 
-    
-    displayAllComments();
+    displayAllComments(); 
 });
 
 window.onload = displayAllComments;

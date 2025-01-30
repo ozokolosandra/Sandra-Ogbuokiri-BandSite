@@ -312,11 +312,11 @@
   padding-bottom: 16px;
 
   &:hover {
-    background-color: $alabaster; // Hover state style
+    background-color: $alabaster;
   }
 
   &.selected {
-    background-color: $mecury; // Selected state style
+    background-color: $mecury;
     border-color: #333;
   }
 }
