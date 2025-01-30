@@ -35,7 +35,7 @@ function displaySingleComment(comment) {
         avatarImg.src = comment.avatar;
     } else {
         avatarImg.style.display = 'none'; 
-        avatarContainer.style.backgroundColor = '#E5E5E5'; 
+        avatarContainer.style.backgroundColor = 'mecury'; 
     }
 
     avatarContainer.appendChild(avatarImg);
