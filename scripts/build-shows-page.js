@@ -28,18 +28,16 @@ const shows=[
         const locationDiv = document.createElement('div');
         locationDiv.textContent = showItem.Location;
         locationDiv.classList.add('show-location');
-
-        
-
+      
         showDiv.appendChild(dateDiv);
         showDiv.appendChild(venueDiv);
         showDiv.appendChild(locationDiv);
         
-        
-
         // showDiv.textContent=showItem.Date  + showItem.Venue + showItem.Location;
         list.appendChild(showDiv);
+
         console.log(showDiv)
+
         const buyTicketRow = document.createElement('div');
         buyTicketRow.classList.add('show-row');
         const buyTicketLink = document.createElement('a');
