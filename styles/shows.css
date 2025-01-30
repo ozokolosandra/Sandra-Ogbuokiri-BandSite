@@ -163,42 +163,6 @@ body {
   }
 }
 
-.shows {
-  font-size: 18px;
-  line-height: 44px;
-  text-transform: uppercase;
-}
-
-.show {
-  line-height: 18px;
-}
-@media screen and (min-width: 768px) {
-  .show__header {
-    display: flex;
-    gap: 11rem;
-    padding-left: 56px;
-  }
-  .show-item {
-    display: flex;
-    justify-content: space-around;
-  }
-  .show-venue {
-    display: flex;
-    justify-content: center;
-  }
-}
-
-.buy-ticket-link {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  text-decoration: none;
-  color: #ffffff;
-  padding: 5px 32px;
-  background-color: #323232;
-  border-radius: 4px;
-}
-
 .footer {
   background-color: #323232;
   color: #ffffff;
@@ -313,4 +277,51 @@ body {
 .footer__socials {
   display: flex;
   gap: 2rem;
+}
+
+.show-item {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.show-item:hover {
+  background-color: #fafafa;
+}
+.show-item.selected {
+  background-color: #e1e1e1;
+  border-color: #333;
+}
+
+.show__header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.show-date,
+.show-location,
+.show-venue {
+  flex: 1;
+}
+
+.show-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.buy-ticket-link {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #323232;
+}
+.buy-ticket-link:hover {
+  background-color: #f0f0f0;
 }/*# sourceMappingURL=shows.css.map */

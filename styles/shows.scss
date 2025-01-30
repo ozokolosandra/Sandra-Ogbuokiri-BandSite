@@ -151,45 +151,45 @@
   }
 }
 
-.shows {
-  font-size: 18px;
-  line-height: 44px;
-  text-transform: uppercase;
+// .shows {
+//   font-size: 18px;
+//   line-height: 44px;
+//   text-transform: uppercase;
 
-}
+// }
 
-.show {
-  line-height: 18px;
+// .show {
+//   line-height: 18px;
 
-  @include tablet {
-    &__header {
-      display: flex;
-      gap: 11rem;
-      padding-left: 56px;
+//   @include tablet {
+//     &__header {
+//       display: flex;
+//       gap: 11rem;
+//       padding-left: 56px;
 
-    }
+//     }
 
-    &-item {
-      display: flex;
-      justify-content: space-around;
-    }
+//     &-item {
+//       display: flex;
+//       justify-content: space-around;
+//     }
 
-    &-venue {
-      display: flex;
-      justify-content: center;
-    }
-  }
-}
+//     &-venue {
+//       display: flex;
+//       justify-content: center;
+//     }
+//   }
+// }
 
 
-.buy-ticket-link {
-  appearance: none;
-  text-decoration: none;
-  color: $white;
-  padding: 5px 32px;
-  background-color: $bandsite-black;
-  border-radius: 4px;
-}
+// .buy-ticket-link {
+//   appearance: none;
+//   text-decoration: none;
+//   color: $white;
+//   padding: 5px 32px;
+//   background-color: $bandsite-black;
+//   border-radius: 4px;
+// }
 
 
 .footer {
@@ -299,5 +299,55 @@
   &__socials {
     display: flex;
     gap: 2rem;
+  }
+}
+
+.show-item {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  &:hover {
+    background-color: $alabaster; // Hover state style
+  }
+
+  &.selected {
+    background-color: $mecury; // Selected state style
+    border-color: #333;
+  }
+}
+
+.show__header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.show-date,
+.show-location,
+.show-venue {
+  flex: 1;
+}
+
+.show-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.buy-ticket-link {
+  color: $white;
+  text-decoration: none;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: $bandsite-black;
+
+  &:hover {
+    background-color: #f0f0f0;
   }
 }
