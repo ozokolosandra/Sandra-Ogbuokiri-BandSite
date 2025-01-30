@@ -482,6 +482,11 @@ button {
   cursor: pointer;
 }
 
+button:hover {
+  background-color: $bandsite-darkblack;
+  color: $white;
+}
+
 .comment__text {
   flex-grow: 1;
 }

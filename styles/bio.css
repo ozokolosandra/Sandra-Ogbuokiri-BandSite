@@ -505,6 +505,11 @@ button {
   cursor: pointer;
 }
 
+button:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
 .comment__text {
   flex-grow: 1;
 }
