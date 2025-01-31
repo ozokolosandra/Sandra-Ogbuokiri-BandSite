@@ -301,18 +301,17 @@
 
 // Form Section Begins here
 
-// #comments {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   padding: 20px;
-// }
+#comments {
+  position: relative;
+}
 
 .form {
   &__photo img {
     width: 36px;
     height: 36px;
     border-radius: 50%;
+    position: absolute;
+    left: 4px;
   }
 
   &__container {
@@ -324,9 +323,13 @@
     flex-direction: column;
     text-align: left;
     margin: 1rem 0;
+    padding-left: 3rem;
   }
 
-  &__text {}
+  &__text {
+    width: 100%;
+    margin-bottom: 14px;
+  }
 }
 
 .comment {
@@ -357,6 +360,11 @@
     position: absolute;
     top: 10px;
     left: 6px;
+  }
+
+  &__time {
+    position: absolute;
+    color: $silver
   }
 }
 

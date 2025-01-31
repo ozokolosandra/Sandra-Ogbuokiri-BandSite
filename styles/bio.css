@@ -320,10 +320,16 @@ body {
   padding-top: 16px;
 }
 
+#comments {
+  position: relative;
+}
+
 .form__photo img {
   width: 36px;
   height: 36px;
   border-radius: 50%;
+  position: absolute;
+  left: 4px;
 }
 .form__container {
   width: 95%;
@@ -333,7 +339,13 @@ body {
   flex-direction: column;
   text-align: left;
   margin: 1rem 0;
+  padding-left: 3rem;
 }
+.form__text {
+  width: 100%;
+  margin-bottom: 14px;
+}
+
 .comment {
   width: 100%;
   position: relative;
@@ -360,6 +372,10 @@ body {
   position: absolute;
   top: 10px;
   left: 6px;
+}
+.comment__time {
+  position: absolute;
+  color: #afafaf;
 }
 
 button {
