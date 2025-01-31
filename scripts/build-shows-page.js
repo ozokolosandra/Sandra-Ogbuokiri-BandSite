@@ -51,12 +51,10 @@ const shows = [
     
     showDiv.appendChild(buyTicketRow);
   
-    // Add hover and click event listeners
     showDiv.addEventListener('mouseenter', () => showDiv.classList.add('hover'));  // Hover state
     showDiv.addEventListener('mouseleave', () => showDiv.classList.remove('hover'));  // Remove hover state
     showDiv.addEventListener('click', () => selectShow(showDiv));  // Click state (selected)
   
-    // Append the whole showDiv to the list
     list.appendChild(showDiv);
   }
   

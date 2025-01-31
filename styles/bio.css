@@ -343,7 +343,6 @@ body {
 }
 .form__text {
   width: 100%;
-  margin-bottom: 14px;
 }
 
 .comment {
@@ -352,11 +351,10 @@ body {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
-  background-color: #fafafa;
   padding: 10px;
-  border-radius: 5px;
   flex-direction: column;
   margin-top: 29px;
+  border-top: 1px solid silver;
 }
 .comment__info {
   display: flex;
@@ -376,6 +374,8 @@ body {
 .comment__time {
   position: absolute;
   color: #afafaf;
+  right: 1px;
+  padding-right: 13px;
 }
 
 button {
@@ -386,6 +386,7 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 16px;
 }
 
 button:hover {

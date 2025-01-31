@@ -328,7 +328,7 @@
 
   &__text {
     width: 100%;
-    margin-bottom: 14px;
+
   }
 }
 
@@ -338,11 +338,10 @@
   display: flex;
   align-items: center;
   margin-bottom: 20px;
-  background-color: $alabaster;
   padding: 10px;
-  border-radius: 5px;
   flex-direction: column;
   margin-top: 29px;
+  border-top: 1px solid silver;
 
   &__info {
     display: flex;
@@ -364,7 +363,10 @@
 
   &__time {
     position: absolute;
-    color: $silver
+    color: $silver;
+    right: 1px;
+    padding-right: 13px;
+
   }
 }
 
@@ -377,6 +379,8 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 16px;
+
 }
 
 button:hover {
