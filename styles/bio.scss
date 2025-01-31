@@ -301,67 +301,80 @@
 
 // Form Section Begins here
 
-#comments {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-}
+// #comments {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   padding: 20px;
+// }
 
-.form_container {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
+.comment {
+  width: 100%;
   position: relative;
-}
-
-.form_photo {
-  width: 60px;
-  height: 60px;
-  margin-right: 10px;
-  position: absolute;
-  right: 87px;
-  top: 21px;
-}
-
-.form_photo img {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-top: 18px;
-
-}
-
-input[type="text"] {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: $alabaster;
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid $silver;
-  flex-grow: 1;
-  width: 90%;
-  text-align: center;
-  margin-left: auto;
-
-}
-
-form {
-  display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  margin-left: auto;
-  width: 90%;
+  margin-top: 29px;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    width: 71%;
+
+  }
+
+  &__no-avatar {
+    display: flex;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    background-color: gray;
+    position: absolute;
+    top: 0;
+    left: 6px;
+  }
 }
 
-label {
-  margin-top: 10px;
-}
+// .form_container {
+//   display: flex;
+//   align-items: center;
+//   margin-bottom: 10px;
+//   position: relative;
+// }
 
-textarea {
-  margin-bottom: 10px;
-  width: 100%10px;
-  border-radius: 5px;
-  border: 1px solid $silver;
-}
+// input[type="text"] {
+//   padding: 10px;
+//   border-radius: 5px;
+//   border: 1px solid $silver;
+//   flex-grow: 1;
+//   width: 90%;
+//   text-align: center;
+//   margin-left: auto;
+
+// }
+
+// form {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: flex-start;
+//   margin-left: auto;
+//   width: 90%;
+// }
+
+// label {
+//   margin-top: 10px;
+// }
+
+// textarea {
+//   margin-bottom: 10px;
+//   width: 100%10px;
+//   border-radius: 5px;
+//   border: 1px solid $silver;
+// }
 
 button {
   padding: 10px 20px;
@@ -386,16 +399,16 @@ button:hover {
   color: $silver;
 }
 
-.comment {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  background-color: $alabaster;
-  padding: 10px;
-  border-radius: 5px;
-  flex-direction: column;
-  margin-top: 29px
-}
+// .comment {
+//   display: flex;
+//   align-items: center;
+//   margin-bottom: 20px;
+//   background-color: $alabaster;
+//   padding: 10px;
+//   border-radius: 5px;
+//   flex-direction: column;
+//   margin-top: 29px
+// }
 
 .avatar-container {
   width: 36px;

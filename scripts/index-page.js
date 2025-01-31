@@ -28,7 +28,7 @@ function displayAllComments(comment){
     const commentInfoEl=createDiv('comment__info');
     commentEl.append(commentInfoEl);
 
-    const avatarEl=comment.avatar !=="" ? createAvatar("comment__image", comment.avatar, comment.name):createDiv("product__no-avatar");
+    const avatarEl=comment.avatar !=="" ? createAvatar("comment__image", comment.avatar, comment.name):createDiv("comment__no-avatar");
     commentEl.append(avatarEl);
 
     const nameEl=createDiv("comment__name", comment.name);
