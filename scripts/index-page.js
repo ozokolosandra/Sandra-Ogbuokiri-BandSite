@@ -40,6 +40,7 @@ function displayAllComments(comment){
     const textEl=createDiv("comment__text", comment.text)
     commentInfoEl.append(textEl);
 
+
     commentList.prepend(commentEl);
 
 }

@@ -320,6 +320,20 @@ body {
   padding-top: 16px;
 }
 
+.form__photo img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+.form__container {
+  width: 95%;
+}
+.form__label {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin: 1rem 0;
+}
 .comment {
   width: 100%;
   position: relative;
@@ -344,11 +358,12 @@ body {
   border-radius: 50%;
   background-color: gray;
   position: absolute;
-  top: 0;
+  top: 10px;
   left: 6px;
 }
 
 button {
+  height: 40px;
   padding: 10px 20px;
   background-color: #323232;
   color: white;
