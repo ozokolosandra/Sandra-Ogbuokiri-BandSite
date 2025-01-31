@@ -19,72 +19,57 @@ const comments = [
     }
 ];
 
-function displaySingleComment(comment) {
-    const commentList = document.getElementById('comment-list');
+const commentList=document.getElementById('list');
+comments.forEach(displayAllComments);
 
-    const commentEl = document.createElement('div');
-    commentEl.classList.add("comment");
+function displayAllComments(comment){
+    const commentEl=createDiv('comment')
 
-    const avatarContainer = document.createElement('div');
-    avatarContainer.classList.add('avatar-container');
+    const commentInfoEl=createDiv('comment__info');
+    commentEl.append(commentInfoEl);
 
-    const avatarImg = document.createElement('img');
-    avatarImg.classList.add('avatar-img');
+    const avatarEl=comment.avatar !=="" ? createAvatar("comment__image", comment.avatar, comment.name):createDiv("product__no-avatar");
+    commentEl.append(avatarEl);
 
-    if (comment.avatar) {
-        avatarImg.src = comment.avatar;
-    } else {
-        avatarImg.style.display = 'none'; 
-        avatarContainer.style.backgroundColor = 'mecury'; 
-    }
+    const nameEl=createDiv("comment__name", comment.name);
+    commentInfoEl.append(nameEl);
 
-    avatarContainer.appendChild(avatarImg);
+    const timestampEl=createDiv("comment__time", comment.timestamp)
+    commentInfoEl.append(timestampEl);
 
-    const nameOfCommenter = document.createElement('div');
-    nameOfCommenter.classList.add('name');
-    nameOfCommenter.textContent = comment.name;
+    const textEl=createDiv("comment__text", comment.text)
+    commentInfoEl.append(textEl);
 
-    const timestampEl = document.createElement("div");
-    timestampEl.classList.add("comment__timestamp");
-    timestampEl.textContent = new Date(comment.timestamp).toLocaleString();
+    commentList.prepend(commentEl);
 
-    const textEl = document.createElement("div");
-    textEl.classList.add("comment__text");
-    textEl.textContent = comment.text;
-
-    commentEl.appendChild(avatarContainer);
-    commentEl.appendChild(nameOfCommenter);
-    commentEl.appendChild(timestampEl);
-    commentEl.appendChild(textEl);
-
-    commentList.appendChild(commentEl);
 }
+function createDiv(className, text) {
+    const div = document.createElement("div");
+    div.className = className;
+    div.textContent = text;
+    return div;
+  }
 
-function displayAllComments() {
-    const commentList = document.getElementById('comment-list');
-    commentList.innerHTML = ''; 
+  function createAvatar(className, src, alt) {
+    const img = document.createElement("img");
+    img.className = className;
+    img.src = src;
+    img.alt = alt;
+    return img;
+  }
+const form= document.getElementById('form');
 
-    comments.forEach(displaySingleComment); 
-}
-
-document.querySelector('form').addEventListener('submit', function(event) {
-    event.preventDefault();  
-
-    const name = document.getElementById('name').value;
-    const commentText = document.getElementById('comment__text').value;
-
-    const newComment = {
-        name: name,
-        avatar: '', 
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+  
+    const comment = {
+        name: e.target.name.value,
+        avatar: '',
         timestamp: new Date(),
-        text: commentText
-    };
-
-    comments.unshift(newComment); 
-    document.getElementById('name').value = '';
-    document.getElementById('comment__text').value = '';
-
-    displayAllComments(); 
-});
-
-window.onload = displayAllComments;
+        text: e.target.comment.value,
+      };
+comments.push(comment);
+commentList.replaceChildren();
+comments.forEach(displayAllComments);
+form.reset();
+    });
