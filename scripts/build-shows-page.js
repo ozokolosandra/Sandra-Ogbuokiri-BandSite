@@ -7,37 +7,96 @@ const shows = [
     { Date: 'Sat Nov 16 2024', Venue: 'Hyatt Agency', Location: 'San Francisco, CA' },
     { Date: 'Wed Dec 18 2024', Venue: 'Press Club', Location: 'San Francisco, CA' }
   ];
+
   
   const list = document.getElementById('show__list');
+  const header=document.querySelector('.show__header')
+
+  dateTabletEL=document.createElement('h3')
+  dateTabletEL.innerText='DATE';
+  venueTabletEL=document.createElement('h3')
+  venueTabletEL.innerText='LOCATION';
+  locationTabletEL=document.createElement('h3')
+  locationTabletEL.innerText='DATE'
+
+  header.append(dateTabletEL, venueTabletEL,locationTabletEL);
+
   
   // Function to handle the click (for selected state)
+  let lastClickedShowItem=null;
   function selectShow(showDiv) {
-    const allShows = document.querySelectorAll('.show-item');
-    allShows.forEach(item => item.classList.remove('selected'));  // Remove previous selections
-    showDiv.classList.add('selected');  // Add selected class to clicked item
+    if(lastClickedShowItem){
+      lastClickedShowItem.classList.remove()
+    }
+      else {
+        lastClickedShowItem=showDiv;
+      lastClickedShowItem.classList.add
+      }
+    // const allShows = document.querySelectorAll('.show-item');
+    // allShows.forEach(item => item.classList.remove('selected'));  // Remove previous selections
+    // showDiv.classList.add('selected');  // Add selected class to clicked item
   }
+  // add more functions
+
+  // create h3 headings for date, venue and location, have the classs name, show label
+  // show__label--tablet , display none intially , by making it display bock at tablet breakpoint
   
-  // Using a for loop instead of forEach
+function renderShows(){  const topLabel = document.createElement('div');
+  topLabel.classList.add("show__top-label");
+  const dateEL = document.createElement('h3');
+    dateEL.classList.add("show__label");
+    dateEL.innerText ='DATE';
+
+    const venueEl = document.createElement('h3');
+    venueEl.classList.add("show__label");
+    venueEl.innerText ='VENUE';
+
+    const locationEl =document.createElement('h3');    
+    locationEl.classList.add("show__label");
+    locationEl.innerText='LOCATION';
+    
+    topLabel.append(dateEL, venueEl, locationEl);
+
+
   for (let i = 0; i < shows.length; i++) {
     const showItem = shows[i];
     const showDiv = document.createElement('div');
     showDiv.classList.add('show-item');
   
     // Create and append individual elements for Date, Venue, and Location
-    const dateDiv = document.createElement('div');
-    dateDiv.textContent = showItem.Date;
-    dateDiv.classList.add('show-date');
+    // add a class anme called show label, in css, make the display none for tablet
+     
+    // change to p tags instead of divs, use h3 for date, venue and location
+   
+    // pair div for date, venus and location
+
+    createPairCell("DATE", showItem.Date, list);
+    createPairCell("VENUE", showItem.Venue, list);
+    createPairCell("LOCATION", showItem.Location, list);
+
+    // const pairDateDiv = document.createElement('div');
+    // pairDiv.classList.add("show__pair-info");
+
+    // const dateEL = document.createElement('h3');
+    // dateEL.classList.add("show__label");
+    // dateEL.innerText ='DATE';
+
+    // const TextEl = document.createElement('p');
+    // dateDiv.textContent = showItem.Date;
+    // dateDiv.classList.add('show-date');
+    // pairDateDiv.append(dateEL, dateTextEl);
+
+    // const venueDiv = document.createElement('p');
+    // venueDiv.textContent = showItem.Venue;
+    // venueDiv.classList.add('show-venue');
     
-    const venueDiv = document.createElement('div');
-    venueDiv.textContent = showItem.Venue;
-    venueDiv.classList.add('show-venue');
-    
-    const locationDiv = document.createElement('div');
-    locationDiv.textContent = showItem.Location;
-    locationDiv.classList.add('show-location');
+    // const locationDiv = document.createElement('p');
+    // locationDiv.textContent = showItem.Location;
+    // locationDiv.classList.add('show-location');
   
     // Append Date, Venue, and Location as separate lines
-    showDiv.append(dateDiv, venueDiv, locationDiv);
+    
+    //showDiv.append(dateDiv, venueDiv, locationDiv);
   
     // Create and append "Buy Ticket" section
     const buyTicketLink = document.createElement('a');
@@ -50,11 +109,32 @@ const shows = [
     buyTicketRow.appendChild(buyTicketLink);
     
     showDiv.appendChild(buyTicketRow);
-  
+
+    // remove the hover here and have them in css
     showDiv.addEventListener('mouseenter', () => showDiv.classList.add('hover'));  // Hover state
     showDiv.addEventListener('mouseleave', () => showDiv.classList.remove('hover'));  // Remove hover state
     showDiv.addEventListener('click', () => selectShow(showDiv));  // Click state (selected)
   
     list.appendChild(showDiv);
+
   }
-  
+}
+
+  renderShows();
+ 
+  function createPairCell(label, text, parentEl){
+    const pairDiv = document.createElement('div');
+    pairDiv.classList.add("show__pair-info");
+
+    const labelEl = document.createElement('h3');
+    labelEl.classList.add("show__label");
+    labelEl.innerText =label;
+
+    const textEl = document.createElement('p');
+    textEl.textContent = text;
+    textEl.classList.add('show-date');
+
+    pairDiv.append(labelEl, textEl);
+
+    parentEl.appendChild(pairDiv);
+  }

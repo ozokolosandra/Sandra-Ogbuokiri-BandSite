@@ -99,6 +99,13 @@
   }
 }
 
+iframe {
+  width: 50%;
+  height: 180px;
+  position: absolute;
+  border: 5px solid $white;
+}
+
 // Hero Section
 
 .hero {
@@ -305,10 +312,7 @@
 .show-item {
   display: flex;
   flex-direction: column;
-  padding: 10px;
   margin: 10px 0;
-  border: 1px solid #ccc;
-  padding-top: 16px;
   padding-bottom: 16px;
 
   &:hover {
@@ -322,10 +326,14 @@
 }
 
 .show__header {
-  display: flex;
-  justify-content: space-between;
-  font-weight: bold;
-  margin-bottom: 10px;
+  display: none;
+
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
 }
 
 .show-date,
@@ -337,6 +345,17 @@
 .show-row {
   display: flex;
   flex-direction: column;
+}
+
+.show__label {
+  @include tablet {
+    display: none;
+  }
+}
+
+.show-date {
+  display: flex;
+  justify-content: space-between;
 }
 
 .buy-ticket-link {

@@ -114,6 +114,13 @@ body {
   }
 }
 
+iframe {
+  width: 50%;
+  height: 180px;
+  position: absolute;
+  border: 5px solid #ffffff;
+}
+
 .hero__title {
   margin: 37px;
   color: #ffffff;
@@ -282,10 +289,7 @@ body {
 .show-item {
   display: flex;
   flex-direction: column;
-  padding: 10px;
   margin: 10px 0;
-  border: 1px solid #ccc;
-  padding-top: 16px;
   padding-bottom: 16px;
 }
 .show-item:hover {
@@ -297,10 +301,15 @@ body {
 }
 
 .show__header {
-  display: flex;
-  justify-content: space-between;
-  font-weight: bold;
-  margin-bottom: 10px;
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .show__header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
 }
 
 .show-date,
@@ -312,6 +321,17 @@ body {
 .show-row {
   display: flex;
   flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .show__label {
+    display: none;
+  }
+}
+
+.show-date {
+  display: flex;
+  justify-content: space-between;
 }
 
 .buy-ticket-link {
