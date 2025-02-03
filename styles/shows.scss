@@ -165,45 +165,6 @@ iframe {
   }
 }
 
-// .shows {
-//   font-size: 18px;
-//   line-height: 44px;
-//   text-transform: uppercase;
-
-// }
-
-// .show {
-//   line-height: 18px;
-
-//   @include tablet {
-//     &__header {
-//       display: flex;
-//       gap: 11rem;
-//       padding-left: 56px;
-
-//     }
-
-//     &-item {
-//       display: flex;
-//       justify-content: space-around;
-//     }
-
-//     &-venue {
-//       display: flex;
-//       justify-content: center;
-//     }
-//   }
-// }
-
-
-// .buy-ticket-link {
-//   appearance: none;
-//   text-decoration: none;
-//   color: $white;
-//   padding: 5px 32px;
-//   background-color: $bandsite-black;
-//   border-radius: 4px;
-// }
 
 
 .footer {
@@ -374,6 +335,6 @@ iframe {
   background-color: $bandsite-black;
 
   &:hover {
-    background-color: #f0f0f0;
+    background-color: $white;
   }
 }
