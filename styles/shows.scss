@@ -100,10 +100,17 @@
 }
 
 iframe {
-  width: 50%;
-  height: 180px;
-  position: absolute;
-  border: 5px solid $white;
+  left: 10px;
+  bottom: 18px;
+  width: 90%;
+  height: 110px;
+
+  @include tablet {
+    width: 50%;
+    height: 180px;
+    position: absolute;
+    border: 5px solid $white;
+  }
 }
 
 // Hero Section

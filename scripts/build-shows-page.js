@@ -12,6 +12,8 @@ const shows = [
   const list = document.getElementById('show__list');
   const header=document.querySelector('.show__header')
 
+  const headerDiv=document.createElement('div')
+
   dateTabletEL=document.createElement('h3')
   dateTabletEL.innerText='DATE';
   venueTabletEL=document.createElement('h3')
@@ -19,8 +21,8 @@ const shows = [
   locationTabletEL=document.createElement('h3')
   locationTabletEL.innerText='DATE'
 
-  header.append(dateTabletEL, venueTabletEL,locationTabletEL);
-
+  headerDiv.append(dateTabletEL, venueTabletEL,locationTabletEL);
+  header.appendChild(headerDiv);
   
   // Function to handle the click (for selected state)
   let lastClickedShowItem=null;
