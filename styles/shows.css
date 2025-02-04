@@ -300,6 +300,12 @@ iframe {
   margin: 10px 0;
   padding-bottom: 16px;
 }
+@media screen and (min-width: 768px) {
+  .show-item {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
 .show-item:hover {
   background-color: #fafafa;
 }

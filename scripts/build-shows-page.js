@@ -4,25 +4,12 @@ const shows = [
     { Date: 'Sat Oct 12 2024', Venue: 'View Lounge', Location: 'San Francisco, CA' },
     { Date: 'Sat Nov 16 2024', Venue: 'Hyatt Agency', Location: 'San Francisco, CA' },
     { Date: 'Fri Nov 29 2024', Venue: 'Moscow Center', Location: 'San Francisco, CA' },
-    { Date: 'Sat Nov 16 2024', Venue: 'Hyatt Agency', Location: 'San Francisco, CA' },
     { Date: 'Wed Dec 18 2024', Venue: 'Press Club', Location: 'San Francisco, CA' }
   ];
 
   
   const list = document.getElementById('show__list');
-  const header=document.querySelector('.show__header')
 
-  const headerDiv=document.createElement('div')
-
-  dateTabletEL=document.createElement('h3')
-  dateTabletEL.innerText='DATE';
-  venueTabletEL=document.createElement('h3')
-  venueTabletEL.innerText='LOCATION';
-  locationTabletEL=document.createElement('h3')
-  locationTabletEL.innerText='DATE'
-
-  headerDiv.append(dateTabletEL, venueTabletEL,locationTabletEL);
-  header.appendChild(headerDiv);
   
   // Function to handle the click (for selected state)
   let lastClickedShowItem=null;
@@ -72,9 +59,9 @@ function renderShows(){  const topLabel = document.createElement('div');
    
     // pair div for date, venus and location
 
-    createPairCell("DATE", showItem.Date, list);
-    createPairCell("VENUE", showItem.Venue, list);
-    createPairCell("LOCATION", showItem.Location, list);
+    createPairCell("DATE", showItem.Date, showDiv);
+    createPairCell("VENUE", showItem.Venue, showDiv);
+    createPairCell("LOCATION", showItem.Location, showDiv);
 
     // const pairDateDiv = document.createElement('div');
     // pairDiv.classList.add("show__pair-info");

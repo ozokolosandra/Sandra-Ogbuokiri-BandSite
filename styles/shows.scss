@@ -283,6 +283,11 @@ iframe {
   margin: 10px 0;
   padding-bottom: 16px;
 
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
   &:hover {
     background-color: $alabaster;
   }
