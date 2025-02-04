@@ -303,7 +303,9 @@ iframe {
 @media screen and (min-width: 768px) {
   .show-item {
     flex-direction: row;
-    justify-content: space-between;
+  }
+  .show-item > * {
+    flex: 1;
   }
 }
 .show-item:hover {
@@ -320,16 +322,12 @@ iframe {
 @media screen and (min-width: 768px) {
   .show__header {
     display: flex;
-    justify-content: space-between;
     font-weight: bold;
     margin-bottom: 10px;
   }
-}
-
-.show-date,
-.show-location,
-.show-venue {
-  flex: 1;
+  .show__header > * {
+    flex: 1;
+  }
 }
 
 .show-row {

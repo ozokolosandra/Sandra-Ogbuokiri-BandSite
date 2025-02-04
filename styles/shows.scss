@@ -283,9 +283,13 @@ iframe {
   margin: 10px 0;
   padding-bottom: 16px;
 
+
   @include tablet {
     flex-direction: row;
-    justify-content: space-between;
+
+    & > * {
+      flex: 1
+    }
   }
 
   &:hover {
@@ -303,16 +307,13 @@ iframe {
 
   @include tablet {
     display: flex;
-    justify-content: space-between;
     font-weight: bold;
     margin-bottom: 10px;
-  }
-}
 
-.show-date,
-.show-location,
-.show-venue {
-  flex: 1;
+    & > * {
+      flex: 1
+    }
+  }
 }
 
 .show-row {
