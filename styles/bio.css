@@ -324,6 +324,11 @@ body {
   position: relative;
 }
 
+input,
+textarea {
+  resize: none;
+}
+
 .form__photo img {
   width: 36px;
   height: 36px;
@@ -361,7 +366,7 @@ body {
   flex-direction: column;
   width: 71%;
 }
-.comment__no-avatar {
+.comment__image {
   display: flex;
   height: 36px;
   width: 36px;
