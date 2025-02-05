@@ -305,6 +305,11 @@
   position: relative;
 }
 
+input,
+textarea {
+  resize: none;
+}
+
 .form {
   &__photo img {
     width: 36px;
