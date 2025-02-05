@@ -30,9 +30,7 @@ formEL.addEventListener("submit" , async function newComment(e){
 async function displayAllComments() {
     try{
         const response = await axios.get(`${baseURL}/comments?api_key=${apiKey}`);
-        const comments = response.data;
-        console.log(comments);
-        console.log(comments.length);
+        const comments = response.data; 
         commentList.replaceChildren();
         comments.forEach(displayComment);
 

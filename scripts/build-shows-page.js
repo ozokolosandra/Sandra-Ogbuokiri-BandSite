@@ -1,15 +1,33 @@
-const shows = [
-    { Date: 'Mon Sept 09 2024', Venue: 'Ronald Lane', Location: 'San Francisco, CA' },
-    { Date: 'Tue Sept 17 2024', Venue: 'Pier 3 East', Location: 'San Francisco, CA' },
-    { Date: 'Sat Oct 12 2024', Venue: 'View Lounge', Location: 'San Francisco, CA' },
-    { Date: 'Sat Nov 16 2024', Venue: 'Hyatt Agency', Location: 'San Francisco, CA' },
-    { Date: 'Fri Nov 29 2024', Venue: 'Moscow Center', Location: 'San Francisco, CA' },
-    { Date: 'Wed Dec 18 2024', Venue: 'Press Club', Location: 'San Francisco, CA' }
-  ];
+// const shows = [
+//     { Date: 'Mon Sept 09 2024', Venue: 'Ronald Lane', Location: 'San Francisco, CA' },
+//     { Date: 'Tue Sept 17 2024', Venue: 'Pier 3 East', Location: 'San Francisco, CA' },
+//     { Date: 'Sat Oct 12 2024', Venue: 'View Lounge', Location: 'San Francisco, CA' },
+//     { Date: 'Sat Nov 16 2024', Venue: 'Hyatt Agency', Location: 'San Francisco, CA' },
+//     { Date: 'Fri Nov 29 2024', Venue: 'Moscow Center', Location: 'San Francisco, CA' },
+//     { Date: 'Wed Dec 18 2024', Venue: 'Press Club', Location: 'San Francisco, CA' }
+//   ];
 
+
+  let apiKey = "02dac415-1b1d-4c56-a21b-0ab8fd60ac9b";
+  let baseURL='https://unit-2-project-api-25c1595833b2.herokuapp.com'
   
-  const list = document.getElementById('show__list');
+  
+  const list = document.getElementById('show__list'); 
 
+  async function shows() {
+    try{
+        const response = await axios.get(`${baseURL}/showdates?api_key=${apiKey}`);
+        const shows = response.data; 
+        console.log(shows)
+        renderShows(shows)
+
+    }
+    catch (e) {
+        console.log(e);
+    }
+}
+shows();
+  
   
   // Function to handle the click (for selected state)
   let lastClickedShowItem=null;
@@ -30,8 +48,10 @@ const shows = [
   // create h3 headings for date, venue and location, have the classs name, show label
   // show__label--tablet , display none intially , by making it display bock at tablet breakpoint
   
-function renderShows(){  const topLabel = document.createElement('div');
+function renderShows(shows){  
+  const topLabel = document.createElement('div');
   topLabel.classList.add("show__top-label");
+
   const dateEL = document.createElement('h3');
     dateEL.classList.add("show__label");
     dateEL.innerText ='DATE';
@@ -59,9 +79,9 @@ function renderShows(){  const topLabel = document.createElement('div');
    
     // pair div for date, venus and location
 
-    createPairCell("DATE", showItem.Date, showDiv);
-    createPairCell("VENUE", showItem.Venue, showDiv);
-    createPairCell("LOCATION", showItem.Location, showDiv);
+    createPairCell("DATE", showItem.date, showDiv);
+    createPairCell("VENUE", showItem.place, showDiv);
+    createPairCell("LOCATION", showItem.location, showDiv);
 
     // const pairDateDiv = document.createElement('div');
     // pairDiv.classList.add("show__pair-info");
@@ -109,7 +129,7 @@ function renderShows(){  const topLabel = document.createElement('div');
   }
 }
 
-  renderShows();
+  // renderShows();
  
   function createPairCell(label, text, parentEl){
     const pairDiv = document.createElement('div');
