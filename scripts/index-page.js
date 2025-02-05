@@ -6,6 +6,8 @@ let baseURL='https://unit-2-project-api-25c1595833b2.herokuapp.com'
  const commentList=document.getElementById('list');
 
 const formEL = document.getElementById('form');
+
+
 formEL.addEventListener("submit" , async function newComment(e){
     e.preventDefault();
 
@@ -57,8 +59,8 @@ function displayComment(comment){
     const nameEl=createDiv("comment__name", comment.name);
     commentInfoEl.append(nameEl);
 
-    //const formattedTimestamp = formatTi   mestamp(comment.timestamp);
-    const timestampEl = createDiv("comment__time", comment.timestamp);
+    const formattedTimestamp = formatTimestamp(comment.timestamp);
+    const timestampEl = createDiv("comment__time", formattedTimestamp);
     commentInfoEl.append(timestampEl);
 
     const textEl=createDiv("comment__text", comment.comment)
@@ -83,3 +85,33 @@ function createDiv(className, text) {
     return img;
   }
   displayAllComments();
+
+  function formatTimestamp(timestamp) {
+    const now = new Date();
+    const timeDifference = now - new Date(parseInt(timestamp)); 
+    const seconds = Math.floor(timeDifference / 1000);  
+    const minutes = Math.floor(seconds / 60);  
+    const hours = Math.floor(minutes / 60);  
+    const days = Math.floor(hours / 24);
+    const weeks = Math.floor(days / 7); 
+    const months = Math.floor(days / 30);
+    const years = Math.floor(days/365)  ;
+
+    if (seconds < 60) {
+        return `${seconds} seconds ago`;
+    } else if (minutes < 60) {
+        return `${minutes} minutes ago`;
+    } else if (hours < 24) {
+        return `${hours} hours ago`;
+    } else if (days < 7) {
+        return `${days} days ago`;
+    } else if (weeks < 4) {
+        return `${weeks} weeks ago`;
+    } else if (months < 12) {
+        return `${months} months ago`;
+    } else {
+        return `${years} years ago`;
+    
+    }
+}
+ 
