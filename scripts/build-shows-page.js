@@ -43,10 +43,6 @@ shows();
     // allShows.forEach(item => item.classList.remove('selected'));  // Remove previous selections
     // showDiv.classList.add('selected');  // Add selected class to clicked item
   }
-  // add more functions
-
-  // create h3 headings for date, venue and location, have the classs name, show label
-  // show__label--tablet , display none intially , by making it display bock at tablet breakpoint
   
 function renderShows(shows){  
   const topLabel = document.createElement('div');
@@ -71,41 +67,10 @@ function renderShows(shows){
     const showItem = shows[i];
     const showDiv = document.createElement('div');
     showDiv.classList.add('show-item');
-  
-    // Create and append individual elements for Date, Venue, and Location
-    // add a class anme called show label, in css, make the display none for tablet
-     
-    // change to p tags instead of divs, use h3 for date, venue and location
-   
-    // pair div for date, venus and location
 
     createPairCell("DATE", showItem.date, showDiv);
     createPairCell("VENUE", showItem.place, showDiv);
     createPairCell("LOCATION", showItem.location, showDiv);
-
-    // const pairDateDiv = document.createElement('div');
-    // pairDiv.classList.add("show__pair-info");
-
-    // const dateEL = document.createElement('h3');
-    // dateEL.classList.add("show__label");
-    // dateEL.innerText ='DATE';
-
-    // const TextEl = document.createElement('p');
-    // dateDiv.textContent = showItem.Date;
-    // dateDiv.classList.add('show-date');
-    // pairDateDiv.append(dateEL, dateTextEl);
-
-    // const venueDiv = document.createElement('p');
-    // venueDiv.textContent = showItem.Venue;
-    // venueDiv.classList.add('show-venue');
-    
-    // const locationDiv = document.createElement('p');
-    // locationDiv.textContent = showItem.Location;
-    // locationDiv.classList.add('show-location');
-  
-    // Append Date, Venue, and Location as separate lines
-    
-    //showDiv.append(dateDiv, venueDiv, locationDiv);
   
     // Create and append "Buy Ticket" section
     const buyTicketLink = document.createElement('a');
@@ -140,6 +105,16 @@ function renderShows(shows){
     labelEl.innerText =label;
 
     const textEl = document.createElement('p');
+
+    if(label==="DATE" && text){
+      const dateObj = new Date(Number(text));
+      const weekday = dateObj.toLocaleString('en-US', { weekday: 'short' });
+      const month = dateObj.toLocaleString('en-US', { month: 'short' });
+      const day = dateObj.toLocaleString('en-US', { day: '2-digit' });
+      const year = dateObj.getFullYear();
+      text = `${weekday} ${month} ${day} ${year}`;
+    }
+    
     textEl.textContent = text;
     textEl.classList.add('show-date');
 
