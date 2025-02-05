@@ -1,46 +1,67 @@
 
 
-const comments = [
-    { 
-        name: "Victor Pinto", 
-        avatar: '', 
-        timestamp: '11/02/2023',
-        text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains." 
-    },
-    {  
-        name: "Christina Cabrera", 
-        avatar: '', 
-        timestamp: '10/28/2023', 
-        text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day." 
-    },
-    { 
-        name: "Isaac Tadesse",
-        avatar: '', 
-        timestamp: '10/20/2023', 
-        text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough." 
+let apiKey = "02dac415-1b1d-4c56-a21b-0ab8fd60ac9b";
+let baseURL='https://unit-2-project-api-25c1595833b2.herokuapp.com'
+
+ const commentList=document.getElementById('list');
+
+const formEL = document.getElementById('form');
+formEL.addEventListener("submit" , async function newComment(e){
+    e.preventDefault();
+
+    try{
+        const response=await axios.post(`${baseURL}/comments?api_key=${apiKey}`,{
+            name:e.target.name.value,
+            comment:e.target.comment.value,
+            avatar: '',
+        });
+        console.log(response.data)
+        displayAllComments();
+        // commentList.replaceChildren();
     }
-];
+    catch (e) {
+        console.log(e);
+    }
+});
 
-const commentList=document.getElementById('list');
-comments.forEach(displayAllComments);
 
-function displayAllComments(comment){
+async function displayAllComments() {
+    try{
+        const response = await axios.get(`${baseURL}/comments?api_key=${apiKey}`);
+        const comments = response.data;
+        console.log(comments);
+        console.log(comments.length);
+        commentList.replaceChildren();
+        comments.forEach(displayComment);
+
+    }
+    catch (e) {
+        console.log(e);
+    }
+}
+
+const emptyAvatar ='';
+
+
+function displayComment(comment){
     const commentEl=createDiv('comment')
 
     const commentInfoEl=createDiv('comment__info');
     commentEl.append(commentInfoEl);
 
-    const avatarEl=comment.avatar !=="" ? createAvatar("comment__image", comment.avatar, comment.name):createDiv("comment__no-avatar");
+    
+    const avatar=comment.avatar !=="" ? comment.avatar: emptyAvatar
+    const avatarEl=createAvatar('comment__image', emptyAvatar, comment.name);
     commentEl.append(avatarEl);
 
     const nameEl=createDiv("comment__name", comment.name);
     commentInfoEl.append(nameEl);
 
-    const formattedTimestamp = formatTimestamp(comment.timestamp);
-    const timestampEl = createDiv("comment__time", formattedTimestamp);
+    //const formattedTimestamp = formatTi   mestamp(comment.timestamp);
+    const timestampEl = createDiv("comment__time", comment.timestamp);
     commentInfoEl.append(timestampEl);
 
-    const textEl=createDiv("comment__text", comment.text)
+    const textEl=createDiv("comment__text", comment.comment)
     commentInfoEl.append(textEl);
 
 
@@ -48,14 +69,6 @@ function displayAllComments(comment){
 
 }
 
-function formatTimestamp(timestamp) {
-    if (typeof timestamp === "string") {
-        return timestamp;
-    }
-    // this below will format the date as month/day/year
-    const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
-    return timestamp.toLocaleDateString('en-US', options);
-}
 
 function createDiv(className, text) {
     const div = document.createElement("div");
@@ -64,26 +77,9 @@ function createDiv(className, text) {
     return div;
   }
 
-  function createAvatar(className, src, alt) {
+  function createAvatar(className) {
     const img = document.createElement("img");
     img.className = className;
-    img.src = src;
-    img.alt = alt;
     return img;
   }
-const form= document.getElementById('form');
-
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-  
-    const comment = {
-        name: e.target.name.value,
-        avatar: '',
-        timestamp: new Date(),
-        text: e.target.comment.value,
-      };
-comments.push(comment);
-commentList.replaceChildren();
-comments.forEach(displayAllComments);
-form.reset();
-    });
+  displayAllComments();
