@@ -298,7 +298,7 @@ iframe {
   display: flex;
   flex-direction: column;
   margin: 10px 0;
-  padding-bottom: 16px;
+  border-bottom: 1px solid silver;
 }
 @media screen and (min-width: 768px) {
   .show-item {
@@ -335,6 +335,11 @@ iframe {
   flex-direction: column;
 }
 
+.show__label {
+  font-size: 12px;
+  color: #afafaf;
+  margin-bottom: 0;
+}
 @media screen and (min-width: 768px) {
   .show__label {
     display: none;
@@ -342,7 +347,9 @@ iframe {
 }
 
 .show-date {
+  margin-top: 10px;
   display: flex;
+  font-size: 16px;
   justify-content: space-between;
 }
 

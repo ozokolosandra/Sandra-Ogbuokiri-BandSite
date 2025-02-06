@@ -84,6 +84,11 @@ function renderShows(shows){
     
     showDiv.appendChild(buyTicketRow);
 
+     // create an empty div in order to add the divider
+     const showDivder = document.createElement('div');
+     showDivder.classList.add('show-divider')
+     showDiv.appendChild(showDivder);
+
     // remove the hover here and have them in css
     showDiv.addEventListener('mouseenter', () => showDiv.classList.add('hover'));  // Hover state
     showDiv.addEventListener('mouseleave', () => showDiv.classList.remove('hover'));  // Remove hover state

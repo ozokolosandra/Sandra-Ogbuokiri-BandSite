@@ -16,7 +16,9 @@ formEL.addEventListener("submit" , async function newComment(e){
             name:e.target.name.value,
             comment:e.target.comment.value,
             avatar: '',
+            
         });
+        console.log("hello" ,e.target);
         console.log(response.data)
         displayAllComments();
         // commentList.replaceChildren();
