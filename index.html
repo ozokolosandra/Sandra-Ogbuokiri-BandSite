@@ -8,8 +8,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-    <script  src="./scripts/index-page.js" defer></script>
-    
+    <script src="./scripts/index-page.js" defer></script>
   </head>
 
   <body>
@@ -131,28 +130,35 @@
 
     <section id="comments">
       <div class="form__title"><h1>Join the Conversation</h1></div>
-      <section class="form__container"> 
+      <section class="form__container">
         <div class="form__photo">
-          <img src="./assets/Images/Mohan-muruge.jpg" alt="form_image"/>
+          <img src="./assets/Images/Mohan-muruge.jpg" alt="form_image" />
         </div>
-      
-          <form id="form" class="form">
-            <label class="form__label">
-              NAME
-            <input class="form__text" name ="name" placeholder="Enter your name" required />
+
+        <form id="form" class="form">
+          <label class="form__label">
+            NAME
+            <input
+              class="form__text"
+              name="name"
+              placeholder="Enter your name"
+              required
+            />
           </label>
-            <label class="form__label">
-              COMMENT
-              <textarea class ="form__text" name="comment" placeholder="Add a new comment" required></textarea>
+          <label class="form__label">
+            COMMENT
+            <textarea
+              class="form__text"
+              name="comment"
+              placeholder="Add a new comment"
+              required
+            ></textarea>
+          </label>
           <button type="submit" class="form__submit">COMMENT</button>
-      </form>
-        </div>
+        </form>
       </section>
     </section>
-      <div class="list" id="list"></div>
-      
-    </section>
-
+    <div class="list" id="list"></div>
 
     <section class="footer">
       <div class="footer__footer">

@@ -363,4 +363,9 @@ iframe {
 }
 .buy-ticket-link:hover {
   background-color: #ffffff;
+}
+
+.show-divider {
+  margin-top: 1rem;
+  border-top: 1px solid silver;
 }/*# sourceMappingURL=shows.css.map */

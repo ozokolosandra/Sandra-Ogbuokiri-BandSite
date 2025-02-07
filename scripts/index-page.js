@@ -15,12 +15,13 @@ formEL.addEventListener("submit" , async function newComment(e){
         const response=await axios.post(`${baseURL}/comments?api_key=${apiKey}`,{
             name:e.target.name.value,
             comment:e.target.comment.value,
-            avatar: '',
+            
             
         });
         console.log("hello" ,e.target);
         console.log(response.data)
         displayAllComments();
+        formEL.reset()
         // commentList.replaceChildren();
     }
     catch (e) {
@@ -33,6 +34,7 @@ async function displayAllComments() {
     try{
         const response = await axios.get(`${baseURL}/comments?api_key=${apiKey}`);
         const comments = response.data; 
+        comments.sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
         commentList.replaceChildren();
         comments.forEach(displayComment);
 
