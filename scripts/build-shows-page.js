@@ -76,7 +76,7 @@ function renderShows(shows){
     const buyTicketLink = document.createElement('a');
     buyTicketLink.classList.add('buy-ticket-link');
     buyTicketLink.href = "#";
-    buyTicketLink.textContent = "Buy Ticket";
+    buyTicketLink.textContent = "Buy Tickets";
     
     const buyTicketRow = document.createElement('div');
     buyTicketRow.classList.add('show-row');

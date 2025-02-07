@@ -320,42 +320,91 @@ body {
   padding-top: 16px;
 }
 
-#comments {
-  position: relative;
-}
 @media screen and (min-width: 768px) {
   #comments {
     margin-right: 56px;
     left: 60px;
   }
 }
+@media screen and (min-width: 1024px) {
+  #comments {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    margin-right: 56px;
+    left: 60px;
+  }
+}
 
-input,
+input {
+  background-color: #fafafa;
+}
+
 textarea {
   resize: none;
   background-color: #fafafa;
   color: #000000;
+  height: 143px;
 }
 
 .form {
   width: 100%;
 }
+.form__title {
+  font-size: 22px;
+  margin-left: 22px;
+}
+.form__title h1 {
+  margin-bottom: 0;
+}
+.form__photo {
+  padding-top: 35px;
+  width: 36px;
+  height: 36px;
+}
+@media screen and (min-width: 1024px) {
+  .form__photo {
+    display: flex;
+    width: 36px;
+    height: 36px;
+  }
+}
 .form__photo img {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  position: absolute;
-  left: 4px;
+  margin-left: 10px;
+  margin-top: 22px;
+}
+@media screen and (min-width: 1024px) {
+  .form {
+    margin-top: 35px;
+    flex-direction: column;
+    display: flex;
+  }
 }
 .form__container {
   width: 95%;
+  margin-left: 10px;
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  .form__container {
+    width: 80%;
+    margin-left: 60px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .form__container {
+    width: 51.5%;
+  }
 }
 .form__label {
   display: flex;
   flex-direction: column;
   text-align: left;
   margin: 1rem 0;
-  padding-left: 3rem;
+  padding-left: 3.5rem;
   color: #afafaf;
 }
 .form__text {
@@ -377,7 +426,19 @@ textarea {
   padding: 10px;
   flex-direction: column;
   margin-top: 29px;
+  margin-left: 24px;
   border-top: 1px solid silver;
+}
+@media screen and (min-width: 768px) {
+  .comment {
+    width: 77%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .comment {
+    width: 50%;
+    margin-left: 35px;
+  }
 }
 .comment__info {
   display: flex;
@@ -402,7 +463,7 @@ textarea {
 }
 
 button {
-  width: 85.5%;
+  width: 91.5%;
   height: 40px;
   background-color: #323232;
   color: white;
@@ -424,11 +485,23 @@ button:hover {
   color: #ffffff;
 }
 
+@media screen and (min-width: 768px) {
+  .list {
+    margin-left: 45px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .list {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 .comment__text {
   flex-grow: 1;
 }
-
-.comment__timestamp {
+.comment__text__timestamp {
   font-size: 12px;
   color: #afafaf;
 }
