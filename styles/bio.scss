@@ -329,8 +329,16 @@ textarea {
   width: 100%;
 
   &__title {
-    font-size: 22px;
-    margin-left: 22px
+    font-size: 18px;
+    margin-left: 22px;
+
+    @include tablet {
+      font-size: 22px;
+    }
+
+    @include desktop {
+      font-size: 22px;
+    }
   }
 
 
@@ -450,6 +458,13 @@ textarea {
     padding-right: 13px;
 
   }
+
+  &__likes {
+    width: 20%;
+    background-color: $alabaster;
+    margin: 0;
+  }
+
 }
 
 

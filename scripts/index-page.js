@@ -15,6 +15,7 @@ formEL.addEventListener("submit" , async function newComment(e){
         const response=await axios.post(`${baseURL}/comments?api_key=${apiKey}`,{
             name:e.target.name.value,
             comment:e.target.comment.value,
+            //likes:e.target.likes.value,
             
             
         });
@@ -30,13 +31,16 @@ formEL.addEventListener("submit" , async function newComment(e){
 });
 
 
-async function displayAllComments() {
+async function displayAllComments(createLikes) {
     try{
         const response = await axios.get(`${baseURL}/comments?api_key=${apiKey}`);
         const comments = response.data; 
+        const id = comments.id;
         comments.sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
         commentList.replaceChildren();
         comments.forEach(displayComment);
+        console.log(comments);
+
 
     }
     catch (e) {
@@ -45,6 +49,7 @@ async function displayAllComments() {
 }
 
 const emptyAvatar ='';
+
 
 
 function displayComment(comment){
@@ -68,6 +73,9 @@ function displayComment(comment){
     const textEl=createDiv("comment__text", comment.comment)
     commentInfoEl.append(textEl);
 
+    const likeEl=createLikes("comment__likes",comment.likes, comment.id);
+    commentInfoEl.append(likeEl);
+
 
     commentList.prepend(commentEl);
 
@@ -86,6 +94,44 @@ function createDiv(className, text) {
     img.className = className;
     return img;
   }
+
+  function createLikes(className, likes, id) {
+    const button = document.createElement("button");
+    button.className = className;
+
+    const likeIcon = document.createElement("img");
+    likeIcon.src = "../assets/Icons/SVG/icon-like.svg";  
+    likeIcon.alt = "Like Icon";  
+    likeIcon.className = "like-icon"; 
+    button.appendChild(likeIcon);
+    const likesText = document.createElement("span"); 
+    likesText.textContent = ` ${likes}`;
+    button.appendChild(likesText);
+
+    //button.innerHTML = ` ${likes}`; 
+
+    button.addEventListener("click", async function() {
+        try {
+            likes++;
+            button.innerHTML = `${likes}`;
+            const status = await axios.put(`${baseURL}/comments/${id}/like?api_key=${apiKey}`, {
+                likes
+            });
+
+            if (status.status !== 200) {
+
+                console.error("Error updating likes on the backend");
+            }
+        } catch (e) {
+            console.error("Error updating likes:", e);
+        }
+    });
+
+    return button;
+}
+
+
+
   displayAllComments();
 
   function formatTimestamp(timestamp) {

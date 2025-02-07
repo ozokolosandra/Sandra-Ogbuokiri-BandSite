@@ -170,6 +170,11 @@ iframe {
   display: flex;
   flex-direction: column;
 
+  @include tablet {
+    border-bottom: 1px solid $silver;
+    margin: 5px;
+  }
+
 
   @include tablet {
     flex-direction: row;
@@ -189,7 +194,17 @@ iframe {
   }
 }
 
+.show {
+  @include tablet {
+    margin-left: 20px;
+    margin-top: 44px;
+    font-size: 32px;
+  }
+}
+
 .show__header {
+  color: $silver;
+  text-transform: uppercase;
 
   &__title {
     @include tablet {
@@ -241,6 +256,9 @@ iframe {
   margin: 10px 0px 0 15px;
 }
 
+
+
+
 .buy-ticket-link {
   color: $white;
   text-decoration: none;
@@ -261,6 +279,15 @@ iframe {
 .show-divider {
   margin-top: 1rem;
   border-top: 1px solid silver;
+
+  @include tablet {
+    border: 0;
+    display: none;
+  }
+
+  @include desktop {
+    border: 0;
+  }
 }
 
 

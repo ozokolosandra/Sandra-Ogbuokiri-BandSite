@@ -351,8 +351,18 @@ textarea {
   width: 100%;
 }
 .form__title {
-  font-size: 22px;
+  font-size: 18px;
   margin-left: 22px;
+}
+@media screen and (min-width: 768px) {
+  .form__title {
+    font-size: 22px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .form__title {
+    font-size: 22px;
+  }
 }
 .form__title h1 {
   margin-bottom: 0;
@@ -460,6 +470,11 @@ textarea {
   color: #afafaf;
   right: 1px;
   padding-right: 13px;
+}
+.comment__likes {
+  width: 20%;
+  background-color: #fafafa;
+  margin: 0;
 }
 
 button {
