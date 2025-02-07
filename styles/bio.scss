@@ -302,8 +302,6 @@
 // Form Section Begins here
 
 #comments {
-
-
   @include tablet {
     margin-right: 56px;
     left: 60px;
@@ -334,6 +332,7 @@ textarea {
     font-size: 22px;
     margin-left: 22px
   }
+
 
   &__title h1 {
     margin-bottom: 0;
