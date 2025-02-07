@@ -323,12 +323,23 @@ body {
 #comments {
   position: relative;
 }
+@media screen and (min-width: 768px) {
+  #comments {
+    margin-right: 56px;
+    left: 60px;
+  }
+}
 
 input,
 textarea {
   resize: none;
+  background-color: #fafafa;
+  color: #000000;
 }
 
+.form {
+  width: 100%;
+}
 .form__photo img {
   width: 36px;
   height: 36px;
@@ -345,9 +356,16 @@ textarea {
   text-align: left;
   margin: 1rem 0;
   padding-left: 3rem;
+  color: #afafaf;
 }
 .form__text {
   width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .form-action {
+    display: flex;
+    justify-content: flex-end;
+  }
 }
 
 .comment {
@@ -384,14 +402,21 @@ textarea {
 }
 
 button {
+  width: 85.5%;
   height: 40px;
-  padding: 10px 20px;
   background-color: #323232;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 16px;
+  margin-left: 48px;
+  padding: 0 3px 0 0;
+}
+@media screen and (min-width: 768px) {
+  button {
+    width: 34.5%;
+  }
 }
 
 button:hover {
