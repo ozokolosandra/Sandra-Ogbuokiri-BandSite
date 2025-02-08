@@ -265,6 +265,11 @@ iframe {
   margin: 10px 0px 0 15px;
 }
 
+span {
+  font-family: "NunitoSans";
+  font-weight: 700;
+}
+
 .buy-ticket-link {
   color: #ffffff;
   text-decoration: none;

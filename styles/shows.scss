@@ -254,8 +254,12 @@ iframe {
   font-size: 16px;
   justify-content: space-between;
   margin: 10px 0px 0 15px;
+
 }
 
+span {
+  @include font_bold;
+}
 
 
 

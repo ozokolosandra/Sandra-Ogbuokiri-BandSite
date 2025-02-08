@@ -118,10 +118,16 @@ function renderShows(shows){
       const day = dateObj.toLocaleString('en-US', { day: '2-digit' });
       const year = dateObj.getFullYear();
       text = `${weekday} ${month} ${day} ${year}`;
+      const dateSpan = document.createElement('span');
+      dateSpan.textContent = `${weekday} ${month} ${day} ${year}`;
+      dateSpan.classList.add('show-date');  // Apply the bold class to the date
+      textEl.appendChild(dateSpan);
     }
+    else {
     
     textEl.textContent = text;
     textEl.classList.add('show-date');
+    }
 
     pairDiv.append(labelEl, textEl);
 
