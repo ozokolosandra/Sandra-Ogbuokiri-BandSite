@@ -103,13 +103,14 @@ iframe {
   left: 10px;
   bottom: 18px;
   width: 90%;
-  height: 110px;
+  height: 85px;
+  border: 5px solid $white;
 
   @include tablet {
     width: 50%;
     height: 180px;
     position: absolute;
-    border: 5px solid $white;
+
   }
 }
 
@@ -117,20 +118,28 @@ iframe {
 
 .hero {
   &__title {
-    margin: 37px;
+
     color: $white;
-    padding-left: 12px;
     z-index: 1;
-    font-size: 18px;
+    font-size: 12px;
     line-height: 2rem;
-    padding-bottom: 80px;
-    margin-top: 15px;
-    @include font_bold;
+    margin-top: 5px;
+    @include font_regular;
 
     @include tablet {
       font-size: 60px;
       line-height: 4.25rem;
     }
+  }
+
+  &__subtitle {
+    margin-top: 0;
+    z-index: 1;
+    font-size: 22px;
+    color: $white;
+    line-height: 32px;
+    @include font-bold;
+    width: 75%;
   }
 
   &__container {
@@ -139,9 +148,10 @@ iframe {
     min-height: 220px;
     max-height: 700px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     position: relative;
     background-size: cover;
+    padding-left: 15px;
 
     @include tablet {}
   }
@@ -165,36 +175,9 @@ iframe {
   }
 }
 
-
-.show-item {
-  display: flex;
-  flex-direction: column;
-
-  @include tablet {
-    border-bottom: 1px solid $silver;
-    margin: 5px;
-  }
-
-
-  @include tablet {
-    flex-direction: row;
-
-    &>* {
-      flex: 1
-    }
-  }
-
-  &:hover {
-    background-color: $alabaster;
-  }
-
-  &.selected {
-    background-color: $mecury;
-    border-color: #333;
-  }
-}
-
 .show {
+  margin-left: 10px;
+
   @include tablet {
     margin-left: 20px;
     margin-top: 44px;
@@ -247,6 +230,36 @@ iframe {
     display: none;
   }
 }
+
+.show-item {
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
+    border-bottom: 1px solid $silver;
+    margin: 5px;
+  }
+
+
+  @include tablet {
+    flex-direction: row;
+
+    &>* {
+      flex: 1
+    }
+  }
+
+  &:hover {
+    background-color: $alabaster;
+  }
+
+  &.selected {
+    background-color: $mecury;
+    border-color: #333;
+  }
+}
+
+
 
 .show-date {
   margin-top: 10px;
