@@ -73,3 +73,12 @@
   color: $bandsite-darkblack;
   height: 143px;
 }
+
+@mixin underline {
+  &::after {
+    border-bottom: 2px solid $alabaster;
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+}
