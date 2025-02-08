@@ -1,16 +1,21 @@
-// const shows = [
-//     { Date: 'Mon Sept 09 2024', Venue: 'Ronald Lane', Location: 'San Francisco, CA' },
-//     { Date: 'Tue Sept 17 2024', Venue: 'Pier 3 East', Location: 'San Francisco, CA' },
-//     { Date: 'Sat Oct 12 2024', Venue: 'View Lounge', Location: 'San Francisco, CA' },
-//     { Date: 'Sat Nov 16 2024', Venue: 'Hyatt Agency', Location: 'San Francisco, CA' },
-//     { Date: 'Fri Nov 29 2024', Venue: 'Moscow Center', Location: 'San Francisco, CA' },
-//     { Date: 'Wed Dec 18 2024', Venue: 'Press Club', Location: 'San Francisco, CA' }
-//   ];
-
 
   let apiKey = "02dac415-1b1d-4c56-a21b-0ab8fd60ac9b";
   let baseURL='https://unit-2-project-api-25c1595833b2.herokuapp.com'
   
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    
+    const navLinks = document.querySelectorAll('.nav__link');
+
+    navLinks.forEach(a => {
+      
+      if (window.location.pathname.includes(a.getAttribute('href'))) {
+        link.classList.add('nav__link--highlighted');
+      }
+    });
+  });
+
+
   
   const list = document.getElementById('show__list'); 
 
@@ -33,15 +38,13 @@ shows();
   let lastClickedShowItem=null;
   function selectShow(showDiv) {
     if(lastClickedShowItem){
-      lastClickedShowItem.classList.remove()
+      lastClickedShowItem.classList.remove('selected');
     }
       else {
         lastClickedShowItem=showDiv;
-      lastClickedShowItem.classList.add
+      lastClickedShowItem.classList.add('selected')
       }
-    // const allShows = document.querySelectorAll('.show-item');
-    // allShows.forEach(item => item.classList.remove('selected'));  // Remove previous selections
-    // showDiv.classList.add('selected');  // Add selected class to clicked item
+    
   }
   
 function renderShows(shows){  

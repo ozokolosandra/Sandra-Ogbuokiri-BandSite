@@ -11,6 +11,13 @@
   box-sizing: border-box;
 }
 
+.iframe__container {
+  width: 75%;
+
+  @include tablet {
+    width: 75%;
+  }
+}
 
 iframe {
   left: 10px;
@@ -21,8 +28,11 @@ iframe {
 
   @include tablet {
     width: 50%;
-    height: 180px;
+    height: 150px;
     position: absolute;
+    bottom: 33px;
+    margin-left: 40px;
+    border-left-width: 5px;
 
   }
 }
@@ -40,7 +50,7 @@ iframe {
     @include font_regular;
 
     @include tablet {
-      font-size: 60px;
+      font-size: 32px;
       line-height: 4.25rem;
     }
   }
@@ -53,6 +63,10 @@ iframe {
     line-height: 32px;
     @include font-bold;
     width: 75%;
+
+    @include tablet {
+      font-size: 32px;
+    }
   }
 
   &__container {
@@ -65,8 +79,11 @@ iframe {
     position: relative;
     background-size: cover;
     padding-left: 15px;
+    gap: 3rem;
 
-    @include tablet {}
+    @include tablet {
+      padding-left: 45px;
+    }
   }
 
   &__overlay {
