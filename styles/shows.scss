@@ -35,6 +35,17 @@ iframe {
     border-left-width: 5px;
 
   }
+
+  @include desktop {
+    position: static;
+    width: 40%;
+    height: 150px;
+    align-self: anchor-center;
+    border-left-width: 5px;
+    margin-left: 0px;
+    margin-right: 52px;
+
+  }
 }
 
 // Hero Section
@@ -52,6 +63,9 @@ iframe {
     @include tablet {
       font-size: 32px;
       line-height: 4.25rem;
+      line-height: 3rem;
+      font-size: 18px;
+      @include font_medium;
     }
   }
 
@@ -66,6 +80,11 @@ iframe {
 
     @include tablet {
       font-size: 32px;
+      width: 293px;
+    }
+
+    @include desktop {
+      align-self: anchor-center;
     }
   }
 
@@ -79,10 +98,17 @@ iframe {
     position: relative;
     background-size: cover;
     padding-left: 15px;
-    gap: 3rem;
+    ;
 
     @include tablet {
+      gap: 3rem;
       padding-left: 45px;
+      flex-direction: column;
+    }
+
+    @include desktop {
+      padding-left: 45px;
+      flex-direction: row;
     }
   }
 
@@ -180,11 +206,12 @@ iframe {
   }
 
   &:hover {
-    background-color: $alabaster;
+    background-color: $mecury;
+    //cursor: pointer;
   }
 
   &.selected {
-    background-color: $mecury;
+    background-color: $silver;
     border-color: #333;
   }
 }
@@ -210,16 +237,17 @@ span {
   color: $white;
   text-decoration: none;
   padding: 5px;
-  border-radius: 5px;
+  border-radius: 4px;
   background-color: $bandsite-black;
   text-align: center;
   width: 90%;
   text-transform: uppercase;
   padding-bottom: 10px;
   margin: 10px 0;
+  padding-right: 32px;
 
   &:hover {
-    background-color: $white;
+    background-color: $bandsite-darkblack;
   }
 }
 

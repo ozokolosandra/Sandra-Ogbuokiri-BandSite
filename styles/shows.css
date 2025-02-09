@@ -221,7 +221,7 @@ body {
   font-weight: bold;
 }
 .nav__link--highlighted, .nav__link:hover {
-  color: #afafaf;
+  color: #ffffff;
 }
 .nav__link--highlighted::after, .nav__link:hover::after {
   border-bottom: 2px solid #fafafa;
@@ -262,6 +262,17 @@ iframe {
     border-left-width: 5px;
   }
 }
+@media screen and (min-width: 1024px) {
+  iframe {
+    position: static;
+    width: 40%;
+    height: 150px;
+    align-self: anchor-center;
+    border-left-width: 5px;
+    margin-left: 0px;
+    margin-right: 52px;
+  }
+}
 
 .hero__title {
   color: #ffffff;
@@ -276,6 +287,10 @@ iframe {
   .hero__title {
     font-size: 32px;
     line-height: 4.25rem;
+    line-height: 3rem;
+    font-size: 18px;
+    font-family: "Nunitosans";
+    font-weight: 500;
   }
 }
 .hero__subtitle {
@@ -291,6 +306,12 @@ iframe {
 @media screen and (min-width: 768px) {
   .hero__subtitle {
     font-size: 32px;
+    width: 293px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .hero__subtitle {
+    align-self: anchor-center;
   }
 }
 .hero__container {
@@ -303,11 +324,18 @@ iframe {
   position: relative;
   background-size: cover;
   padding-left: 15px;
-  gap: 3rem;
 }
 @media screen and (min-width: 768px) {
   .hero__container {
+    gap: 3rem;
     padding-left: 45px;
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .hero__container {
+    padding-left: 45px;
+    flex-direction: row;
   }
 }
 .hero__overlay {
@@ -406,10 +434,10 @@ iframe {
   }
 }
 .show-item:hover {
-  background-color: #fafafa;
+  background-color: #e1e1e1;
 }
 .show-item.selected {
-  background-color: #e1e1e1;
+  background-color: #afafaf;
   border-color: #333;
 }
 
@@ -430,16 +458,17 @@ span {
   color: #ffffff;
   text-decoration: none;
   padding: 5px;
-  border-radius: 5px;
+  border-radius: 4px;
   background-color: #323232;
   text-align: center;
   width: 90%;
   text-transform: uppercase;
   padding-bottom: 10px;
   margin: 10px 0;
+  padding-right: 32px;
 }
 .buy-ticket-link:hover {
-  background-color: #ffffff;
+  background-color: #000000;
 }
 
 .show-divider {

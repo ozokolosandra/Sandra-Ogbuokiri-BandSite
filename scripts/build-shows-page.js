@@ -76,9 +76,8 @@ function renderShows(shows){
     createPairCell("LOCATION", showItem.location, showDiv);
   
     // Create and append "Buy Ticket" section
-    const buyTicketLink = document.createElement('a');
+    const buyTicketLink = document.createElement('button');
     buyTicketLink.classList.add('buy-ticket-link');
-    buyTicketLink.href = "#";
     buyTicketLink.textContent = "Buy Tickets";
     
     const buyTicketRow = document.createElement('div');

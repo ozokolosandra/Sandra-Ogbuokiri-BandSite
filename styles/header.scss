@@ -80,7 +80,7 @@
         &--highlighted,
         &:hover {
             @include underline;
-            color: $silver;
+            color: $white;
         }
     }
 }

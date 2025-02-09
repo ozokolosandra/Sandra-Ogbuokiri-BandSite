@@ -99,7 +99,7 @@ body {
   font-weight: bold;
 }
 .nav__link--highlighted, .nav__link:hover {
-  color: #afafaf;
+  color: #ffffff;
 }
 .nav__link--highlighted::after, .nav__link:hover::after {
   border-bottom: 2px solid #fafafa;

@@ -221,7 +221,7 @@ body {
   font-weight: bold;
 }
 .nav__link--highlighted, .nav__link:hover {
-  color: #afafaf;
+  color: #ffffff;
 }
 .nav__link--highlighted::after, .nav__link:hover::after {
   border-bottom: 2px solid #fafafa;
@@ -467,7 +467,17 @@ textarea {
   resize: none;
   background-color: #fafafa;
   color: #000000;
-  height: 143px;
+  height: 36px;
+}
+@media screen and (min-width: 768px) {
+  textarea {
+    height: 48px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  textarea {
+    height: 48px;
+  }
 }
 
 .form {
@@ -539,9 +549,6 @@ textarea {
   margin: 1rem 0;
   padding-left: 3.5rem;
   color: #afafaf;
-}
-.form__text {
-  width: 100%;
 }
 @media screen and (min-width: 768px) {
   .form-action {

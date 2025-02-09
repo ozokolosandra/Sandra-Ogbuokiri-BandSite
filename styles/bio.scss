@@ -235,6 +235,14 @@ input {
 
 textarea {
   @include textAreaStyle;
+
+  @include tablet {
+    height: 48px;
+  }
+
+  @include desktop {
+    height: 48px;
+  }
 }
 
 
@@ -308,11 +316,6 @@ textarea {
     margin: 1rem 0;
     padding-left: 3.5rem;
     color: $silver;
-  }
-
-  &__text {
-    width: 100%;
-
   }
 
   &-action {
