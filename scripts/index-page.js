@@ -1,7 +1,5 @@
 
 
-// let apiKey = "02dac415-1b1d-4c56-a21b-0ab8fd60ac9b";
-// let baseURL='https://unit-2-project-api-25c1595833b2.herokuapp.com'
 import { apiKey, baseURL } from "../scripts/global.js";
 console.log(baseURL)
 
@@ -130,7 +128,10 @@ function createDiv(className, text) {
 
                 console.error("Error updating likes on the backend");
             }
-        } catch (e) {
+        
+        } 
+        
+        catch (e) {
             console.error("Error updating likes:", e);
         }
     });

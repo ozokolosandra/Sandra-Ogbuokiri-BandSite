@@ -380,6 +380,7 @@ textarea {
     width: 20%;
     background-color: $alabaster;
     margin: 0;
+    border: 0;
   }
 
 }
@@ -390,7 +391,7 @@ textarea {
 
 }
 
-button {
+.form__submit {
   width: 91.5%;
   height: 40px;
   background-color: $bandsite-black;
@@ -407,7 +408,7 @@ button {
   }
 }
 
-button:hover {
+.form__submit:hover {
   background-color: $bandsite-darkblack;
   color: $white;
 }
