@@ -1,7 +1,9 @@
 
 
-let apiKey = "02dac415-1b1d-4c56-a21b-0ab8fd60ac9b";
-let baseURL='https://unit-2-project-api-25c1595833b2.herokuapp.com'
+// let apiKey = "02dac415-1b1d-4c56-a21b-0ab8fd60ac9b";
+// let baseURL='https://unit-2-project-api-25c1595833b2.herokuapp.com'
+import { apiKey, baseURL } from "../scripts/global.js";
+console.log(baseURL)
 
  const commentList=document.getElementById('list');
 
@@ -15,12 +17,11 @@ formEL.addEventListener("submit" , async function newComment(e){
         const response=await axios.post(`${baseURL}/comments?api_key=${apiKey}`,{
             name:e.target.name.value,
             comment:e.target.comment.value,
-            //likes:e.target.likes.value,
-            
             
         });
+
         console.log("hello" ,e.target);
-        console.log(response.data)
+    
         displayAllComments();
         formEL.reset()
         // commentList.replaceChildren();
@@ -121,7 +122,7 @@ function createDiv(className, text) {
         try {
             likes++;
             button.innerHTML = `${likes}`;
-            const status = await axios.put(`${baseURL}/comments/${id}api_key=${apiKey}`, {
+            const status = await axios.put(`${baseURL}/comments/${id}/like?api_key=${apiKey}`, {
                 likes
             });
 
