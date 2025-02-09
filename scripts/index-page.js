@@ -31,7 +31,7 @@ formEL.addEventListener("submit" , async function newComment(e){
 });
 
 
-async function displayAllComments(createLikes) {
+async function displayAllComments(createLikes , deleteComments) {
     try{
         const response = await axios.get(`${baseURL}/comments?api_key=${apiKey}`);
         const comments = response.data; 
@@ -47,6 +47,9 @@ async function displayAllComments(createLikes) {
         console.log(e);
     }
 }
+
+
+
 
 const emptyAvatar ='';
 
@@ -73,8 +76,14 @@ function displayComment(comment){
     const textEl=createDiv("comment__text", comment.comment)
     commentInfoEl.append(textEl);
 
+    const buttonWrapper = createDiv("button__wrapper");
+    commentInfoEl.append(buttonWrapper);
+
     const likeEl=createLikes("comment__likes",comment.likes, comment.id);
-    commentInfoEl.append(likeEl);
+    buttonWrapper.append(likeEl);
+
+    const deleteEl=deleteComments("comment__delete", comment.id)
+    buttonWrapper.append(deleteEl);
 
 
     commentList.prepend(commentEl);
@@ -106,15 +115,13 @@ function createDiv(className, text) {
     button.appendChild(likeIcon);
     const likesText = document.createElement("span"); 
     likesText.textContent = ` ${likes}`;
-    button.appendChild(likesText);
-
-    //button.innerHTML = ` ${likes}`; 
+    button.appendChild(likesText); 
 
     button.addEventListener("click", async function() {
         try {
             likes++;
             button.innerHTML = `${likes}`;
-            const status = await axios.put(`${baseURL}/comments/${id}/like?api_key=${apiKey}`, {
+            const status = await axios.put(`${baseURL}/comments/${id}api_key=${apiKey}`, {
                 likes
             });
 
@@ -129,6 +136,38 @@ function createDiv(className, text) {
 
     return button;
 }
+
+
+function deleteComments(id){
+    const button = document.createElement("button");
+    button.className = "comment__delete"; // Set a valid class name for styling
+
+    const deleteIcon = document.createElement("img");
+    deleteIcon.src = "../assets/Icons/SVG/icon-delete.svg";  
+    deleteIcon.alt = "delete Icon";  
+    deleteIcon.className = "delete-icon"; 
+    button.appendChild(deleteIcon);
+
+    button.addEventListener("click", async function() {
+        try {
+            const response = await axios.delete(`${baseURL}/comments/${id}?api_key=${apiKey}`);
+
+            console.log("hello")
+            
+            if (response.status === 200) {
+                console.log(`Comment with ID ${id} deleted successfully`);
+                displayAllComments(); 
+            } else {
+                console.error("Error deleting comment");
+            }
+        } catch (e) {
+            console.error("Error deleting comment:", e);
+        }
+    });
+
+    return button;
+}
+
 
 
 
@@ -162,4 +201,3 @@ function createDiv(className, text) {
     
     }
 }
- 

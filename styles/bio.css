@@ -601,10 +601,15 @@ textarea {
   right: 1px;
   padding-right: 13px;
 }
-.comment__likes {
+.comment__likes, .comment__delete {
   width: 20%;
   background-color: #fafafa;
   margin: 0;
+}
+
+.button__wrapper {
+  display: flex;
+  justify-content: space-between;
 }
 
 button {

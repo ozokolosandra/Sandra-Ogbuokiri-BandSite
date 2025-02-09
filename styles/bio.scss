@@ -375,7 +375,8 @@ textarea {
 
   }
 
-  &__likes {
+  &__likes,
+  &__delete {
     width: 20%;
     background-color: $alabaster;
     margin: 0;
@@ -383,6 +384,11 @@ textarea {
 
 }
 
+.button__wrapper {
+  display: flex;
+  justify-content: space-between;
+
+}
 
 button {
   width: 91.5%;
