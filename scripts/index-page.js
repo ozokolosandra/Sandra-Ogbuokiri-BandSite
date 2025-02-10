@@ -1,7 +1,7 @@
 
 
 import { apiKey, baseURL } from "../scripts/global.js";
-console.log(baseURL)
+
 
  const commentList=document.getElementById('list');
 
