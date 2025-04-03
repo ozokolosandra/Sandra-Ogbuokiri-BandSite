@@ -15,9 +15,9 @@ Welcome to **BandSite**, the ultimate web application that showcases a band's ph
 ## Tech Stack
 
 **Languages**:
-- JavaScript (React)
+- JavaScript 
 - HTML
-- CSS
+- CSS (SASS)
 
 
 ---
@@ -27,3 +27,4 @@ Welcome to **BandSite**, the ultimate web application that showcases a band's ph
 1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/BandSite-app.git
+2. Open with Live Server
